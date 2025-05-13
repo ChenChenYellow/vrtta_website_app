@@ -1,5 +1,4 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import { Avatar, Box, Button, Card, CardContent, CardHeader, CardMedia, colors, Container, Divider, Grid, IconButton, Typography } from "@mui/material";
 import { CenterFocusStrong, Margin, Padding } from "@mui/icons-material";
 import AbcIcon from '@mui/icons-material/Abc';
