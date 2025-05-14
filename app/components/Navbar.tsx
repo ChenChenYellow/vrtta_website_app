@@ -122,7 +122,7 @@ const Navbar = () => {
                         boxSizing: 'border-box',
                         width: 180,
                         padding: 2,
-                        height: 350
+                        height: 260
                     },
                 }}
             >
