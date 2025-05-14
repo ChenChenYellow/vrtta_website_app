@@ -167,7 +167,7 @@ export default function products() {
                 onClick={() => setRequestDemoVisible(true)}>Request Demo</Button>
         </Box>
         <Drawer open={requestDemoVisible} anchor="bottom" onClose={() => setRequestDemoVisible(false)} slotProps={{
-            paper: { sx: { width: { xs: "90%", sm: "90%", md: "810px" }, mx: "auto" } }
+            paper: { sx: { width: { xs: "90%", sm: "90%", md: "810px" }, mx: "auto", backgroundColor: "primary.light" } }
         }}>
             <Form style={{}}>
                 <Box sx={{ justifyContent: "center", display: "flex", mb: 10 }}>
