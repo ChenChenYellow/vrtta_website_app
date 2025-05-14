@@ -11,6 +11,8 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "@mui/material";
+import theme from "./components/Theme"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -44,7 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <><Navbar /><Outlet /><Footer /></>;
+  return <ThemeProvider theme={theme}><Navbar /><Outlet /><Footer /></ThemeProvider>;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

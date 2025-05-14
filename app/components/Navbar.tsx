@@ -121,8 +121,9 @@ const Navbar = () => {
                 sx={{
                     '& .MuiDrawer-paper': {
                         boxSizing: 'border-box',
-                        width: '70%',
-                        padding: 2
+                        width: 180,
+                        padding: 2,
+                        height: 350
                     },
                 }}
             >
@@ -140,7 +141,8 @@ const Navbar = () => {
                             onClick={handleDrawerToggle}
                             sx={{
                                 "&:hover":
-                                    { backgroundColor: "green" }
+                                    { backgroundColor: "primary.main" },
+
                             }}
                         >
                             <ListItemText primary={item.title} slotProps={{ primary: { fontFamily: "Segoe UI", fontSize: "0.85rem" } }} />
