@@ -55,8 +55,10 @@ export default function Home() {
   const textSubTitle = {
     ...textCenter, ...textBold
   }
+  const cardGridSize = { xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }
   return <Container>
-    <Box >
+    <Box>
+      <Box sx={{ my: 10 }}></Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Typography variant="h1" sx={textVrtta}>Vrtta</Typography>
       </Box>
@@ -106,11 +108,9 @@ export default function Home() {
           <Typography variant="body1" sx={{ ...textNormal, display: "inline" }}>), is a Montreal-based sustainability company.</Typography>
         </Box>
       </Box>
-      <Box sx={{ my: 3 }}></Box>
-      <Divider variant="middle" />
-      <Box sx={{ my: 1 }}></Box>
+      <Divider variant="middle" sx={{ my: 8 }} />
       <Grid container sx={{ display: "flex" }}>
-        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }}>
+        <Grid size={cardGridSize}>
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
@@ -120,7 +120,7 @@ export default function Home() {
               <Typography sx={textCardContent}>We develop greener and more sustainable product choices in the ‘Circularity’ context.</Typography></CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }}>
+        <Grid size={cardGridSize}>
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
@@ -130,7 +130,7 @@ export default function Home() {
               <Typography sx={textCardContent}>To contribute towards a greener society through simple solutions and circularity models.</Typography></CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }}>
+        <Grid size={cardGridSize}>
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
@@ -140,7 +140,7 @@ export default function Home() {
               <Typography sx={textCardContent}>Leverage creativity and innovation to develop greener solutions.</Typography></CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }}>
+        <Grid size={cardGridSize}>
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
@@ -151,10 +151,7 @@ export default function Home() {
           </Card>
         </Grid>
       </Grid>
-
-      <Box sx={{ my: 1 }}></Box>
-      <Divider variant="middle" />
-      <Box sx={{ my: 3 }}></Box>
+      <Divider variant="middle" sx={{ my: 12 }} />
       <Grid container sx={{ display: "flex" }}>
         <Grid size={{ sm: 12, md: 4 }} sx={{ justifyContent: "center", display: "flex", alignContent: "center" }}>
           <img src="/public/cycle_of_life.png" />
@@ -167,12 +164,11 @@ export default function Home() {
             If you are visiting us, we know you want to take action towards environmental well-being, and we appreciate you for that!</Typography>
           <Box></Box>
           <Typography variant="body1" sx={{ ...textNormal, display: "inline" }} >If you are visiting us, we know you want to take action towards environmental well-being, and we appreciate you for that!</Typography>
-
         </Grid>
       </Grid>
-      <Divider sx={{ my: 4 }} />
+      <Divider variant="middle" sx={{ my: 12 }} />
       <Grid container sx={{ display: "flex", mx: 2 }}>
-        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} sx={{ paddingX: 2 }}>
+        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} sx={{ paddingX: 2, mb: 8 }}>
           <Box sx={{ justifyContent: "left" }}>
             <Typography variant="subtitle1" sx={{ ...textSubTitle, textAlign: "left", color: "primary.dark" }} >Get in Touch</Typography>
             <Typography variant="body1" sx={{ ...textLeft, fontWeight: "medium" }}>Please fill out this form and we will get back to you as soon as possible.</Typography>
@@ -212,7 +208,7 @@ export default function Home() {
         <Grid sx={{
           backgroundColor: "primary.light", boxShadow: 4, "&:hover": {
             boxShadow: 8
-          }, paddingX: 2
+          }, paddingX: 2, mb: 8
         }} size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
           <Form>
             <Box sx={{ my: 2, mt: 4, justifyContent: "center", display: "flex" }}>
@@ -239,7 +235,8 @@ export default function Home() {
                   <Button type="submit" sx={{
                     textTransform: "none", backgroundColor: "primary.dark", color: "primary.contrastText", paddingY: 1.5, paddingX: 3, "&:hover": {
                       boxShadow: 3
-                    }
+                    },
+                    borderRadius: "10px"
                   }}>Send Message</Button>
                 </Grid>
               </Grid>
