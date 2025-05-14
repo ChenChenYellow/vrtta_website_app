@@ -9,7 +9,9 @@ const theme = createTheme({
             contrastText: "#ffffff"
         },
         secondary: {
-            main: "#ffffff"
+            main: "#cbf7de",
+            light: "#dcfae9",
+            contrastText: "#202020"
         }
     },
     typography: {
@@ -19,6 +21,12 @@ const theme = createTheme({
         },
         h2: {
             fontSize: "3.3rem"
+        },
+        h3: {
+            fontSize: "2.2rem"
+        },
+        h4: {
+            fontSize: "1.9rem"
         },
         subtitle1: {
             fontSize: "1.6rem"

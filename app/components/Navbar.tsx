@@ -26,10 +26,8 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 const navItems = [
     { title: 'Home', href: '/', icon: <HomeIcon /> },
-    { title: 'About', href: '/about', icon: <HomeIcon /> },
     { title: 'Products', href: '/products', icon: <CategoryIcon /> },
     { title: 'Consulting', href: '/consulting', icon: <ContactMailIcon /> },
-    { title: 'Request Demo', href: '/request-demo', icon: <HomeIcon /> }
 ];
 
 const Navbar = () => {
@@ -56,10 +54,11 @@ const Navbar = () => {
                             alignItems: 'center',
                             fontWeight: 700,
                             color: 'green',
-                            textDecoration: 'none'
+                            textDecoration: 'none',
+                            letterSpacing: 2
                         }}
                     >
-                        Arivu
+                        Vrtta
                     </Typography>
 
                     {isMobile ? (
