@@ -114,7 +114,7 @@ export default function Home() {
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/public/green_shoot.png" />
+                <img src="/green_shoot.png" />
               </Box>
               <Typography sx={textCardTitle}>What we do?</Typography>
               <Typography sx={textCardContent}>We develop greener and more sustainable product choices in the ‘Circularity’ context.</Typography></CardContent>
@@ -124,7 +124,7 @@ export default function Home() {
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/public/green_eye.png" />
+                <img src="/green_eye.png" />
               </Box>
               <Typography sx={textCardTitle}>Our Vision</Typography>
               <Typography sx={textCardContent}>To contribute towards a greener society through simple solutions and circularity models.</Typography></CardContent>
@@ -134,7 +134,7 @@ export default function Home() {
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/public/green_target.png" />
+                <img src="/green_target.png" />
               </Box>
               <Typography sx={textCardTitle}>Our Mission</Typography>
               <Typography sx={textCardContent}>Leverage creativity and innovation to develop greener solutions.</Typography></CardContent>
@@ -144,7 +144,7 @@ export default function Home() {
           <Card sx={cardsx}>
             <CardContent>
               <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/public/green_truck.png" />
+                <img src="/green_truck.png" />
               </Box>
               <Typography sx={textCardTitle}>What drives us?</Typography>
               <Typography sx={textCardContent}>A passion for sustainable living: ‘Greener choice, Better life’.</Typography></CardContent>
@@ -154,7 +154,7 @@ export default function Home() {
       <Divider variant="middle" sx={{ my: 12 }} />
       <Grid container sx={{ display: "flex" }}>
         <Grid size={{ sm: 12, md: 4 }} sx={{ justifyContent: "center", display: "flex", alignContent: "center" }}>
-          <img src="/public/cycle_of_life.png" />
+          <img src="/cycle_of_life.png" />
 
         </Grid>
         <Grid size={{ sm: 12, md: 8 }} sx={{ paddingX: 4, my: "auto" }}>

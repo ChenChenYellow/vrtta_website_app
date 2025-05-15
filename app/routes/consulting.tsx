@@ -9,7 +9,7 @@ export default function consulting() {
             <Grid container direction={"column"} sx={{ maxWidth: "800px" }}>
                 <Grid container >
                     <Grid size={{ xs: 12, sm: 4 }}>
-                        <img src="/public/green_foot.png" />
+                        <img src="/green_foot.png" />
                     </Grid>
                     <Grid size={{ xs: 12, sm: 8 }} sx={{ my: 1 }}>
                         <Typography variant="h4" sx={{ fontWeight: "medium", my: 2 }}>​Sustainability partners</Typography>
@@ -30,7 +30,7 @@ export default function consulting() {
                             <Typography variant="body1" sx={{ fontWeight: "light" }}>With consumer behaviors positively changing towards eco-consciousness and environmental awareness, it is becoming crucial for companies to understand the environmental impacts of their products and supply choices. ​A product life cycle assessment (LCA) is a detailed and scientific approach to calculating the cumulative environmental impact of each of the activities in a typical product life cycle. LCAs are governed by life cycle thinking as per ISO 14040 procedures. It is the most accurate method of calculating the environmental footprint of a product.</Typography>
                         </Grid>
                         <Grid size={{ xs: 12, sm: 4 }} sx={{ my: 1 }}>
-                            <img src="/public/design_ring.png" />
+                            <img src="/design_ring.png" />
                         </Grid>
                     </Grid>
                     <Grid sx={{ my: 1 }}>

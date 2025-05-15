@@ -97,12 +97,12 @@ const Navbar = () => {
                             {language == "English" ?
                                 <IconButton onClick={() => setLanguage("French")}>
                                     <Icon>
-                                        <img src={"/public/France_Flag.svg"} />
+                                        <img src={"/France_Flag.svg"} />
                                     </Icon>
                                 </IconButton> :
                                 <IconButton onClick={() => setLanguage("English")}>
                                     <Icon>
-                                        <img src={"/public/UK_Flag.svg"} />
+                                        <img src={"/UK_Flag.svg"} />
                                     </Icon>
                                 </IconButton>}
                         </Box>

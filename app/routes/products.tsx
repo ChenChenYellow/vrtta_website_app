@@ -68,11 +68,11 @@ export default function products() {
     return <Box>
         <Grid container direction={"column"}>
             <Grid sx={gridItem}>
-                <img src="/public/arivu_logo.png" />
+                <img src="/arivu_logo.png" />
             </Grid>
             <Grid sx={gridItem} >
                 <Box sx={box} component={Paper} elevation={4}>
-                    <img src="/public/arivu_dashboard.jpg" />
+                    <img src="/arivu_dashboard.jpg" />
                 </Box>
             </Grid>
             <Grid sx={gridItem}>
