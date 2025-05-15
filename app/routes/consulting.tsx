@@ -1,11 +1,13 @@
 import { Box, collapseClasses, Grid, List, ListItem, Paper, Typography } from "@mui/material";
 
 export default function consulting() {
+    const listItemsx = { display: 'list-item', paddingY: 0 }
+    const centerChildren = { display: "flex", justifyContent: "center" }
     return <Box>
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 12 }}>
+        <Box sx={{ ...centerChildren, mt: 12 }}>
             <Typography variant="h3" sx={{ fontWeight: "bold", color: "primary.dark" }}>Consulting</Typography>
         </Box>
-        <Paper sx={{ justifyContent: "center", display: "flex", mx: 3, my: 8, paddingY: 8, paddingX: 4 }} elevation={8} >
+        <Paper sx={{ ...centerChildren, mx: 3, my: 8, paddingY: 8, paddingX: 4 }} elevation={8} >
             <Grid container direction={"column"} sx={{ maxWidth: "800px" }}>
                 <Grid container >
                     <Grid size={{ xs: 12, sm: 4 }}>
@@ -36,11 +38,11 @@ export default function consulting() {
                     <Grid sx={{ my: 1 }}>
                         <Typography variant="body1" sx={{ fontWeight: "bold", textDecoration: "underline" }} >Benefits:</Typography>
                         <List sx={{ listStyleType: 'space-counter', ml: 4, fontWeight: "light" }}>
-                            <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1" sx={{ fontWeight: "light" }}>Quantifies the environmental impact of a product.</Typography></ListItem>
-                            <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps differentiate a product in a competitive marketplace.</Typography></ListItem>
-                            <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1" sx={{ fontWeight: "light" }}>Recognizes the environmental hot-spots for cost and emissions in the product life cycle and suggests the areas of improvement.</Typography></ListItem>
-                            <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in defining realistic sustainability targets and aligning with ‘carbon-neutrality’ goals.</Typography></ListItem>
-                            <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in developing environmental product declarations [EPD].</Typography></ListItem>
+                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Quantifies the environmental impact of a product.</Typography></ListItem>
+                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps differentiate a product in a competitive marketplace.</Typography></ListItem>
+                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Recognizes the environmental hot-spots for cost and emissions in the product life cycle and suggests the areas of improvement.</Typography></ListItem>
+                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in defining realistic sustainability targets and aligning with ‘carbon-neutrality’ goals.</Typography></ListItem>
+                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in developing environmental product declarations [EPD].</Typography></ListItem>
                         </List>
                     </Grid>
 
