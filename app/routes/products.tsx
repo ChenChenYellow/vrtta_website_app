@@ -198,7 +198,7 @@ export default function products() {
                             <Typography variant="body1" sx={{ fontWeight: "bold" }}>Please select the product</Typography>
                         </Grid>
                         <Grid sx={{ my: 2 }}>
-                            <Select variant="standard" value={"Arivu"} sx={{ width: 1 }} >
+                            <Select variant="standard" defaultValue={"Arivu"} sx={{ width: 1 }} >
                                 <MenuItem value={"Arivu"}>Arivu</MenuItem>
                                 <MenuItem value={"Punar"}>Punar</MenuItem>
                                 <MenuItem value={"Gaddi"}>Gaddi</MenuItem>
