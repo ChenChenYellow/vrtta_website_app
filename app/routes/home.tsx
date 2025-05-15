@@ -56,6 +56,23 @@ export default function Home() {
     ...textCenter, ...textBold
   }
   const cardGridSize = { xs: 12, sm: 6, md: 6, lg: 3, xl: 3 }
+  const cards = [{
+    title: "What we do?",
+    content: "We develop greener and more sustainable product choices in the ‘Circularity’ context.",
+    image: "/green_shoot.png"
+  }, {
+    title: "Our Vision",
+    content: "To contribute towards a greener society through simple solutions and circularity models.",
+    image: "/green_eye.png"
+  }, {
+    title: "Our Mission",
+    content: "Leverage creativity and innovation to develop greener solutions.",
+    image: "/green_target.png"
+  }, {
+    title: "What drives us?",
+    content: "A passion for sustainable living: ‘Greener choice, Better life’.",
+    image: "/green_truck.png"
+  },]
   return <Container>
     <Box>
       <Box sx={{ my: 10 }}></Box>
@@ -110,46 +127,17 @@ export default function Home() {
       </Box>
       <Divider variant="middle" sx={{ my: 8 }} />
       <Grid container sx={{ display: "flex" }}>
-        <Grid size={cardGridSize}>
-          <Card sx={cardsx}>
-            <CardContent>
-              <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/green_shoot.png" />
-              </Box>
-              <Typography sx={textCardTitle}>What we do?</Typography>
-              <Typography sx={textCardContent}>We develop greener and more sustainable product choices in the ‘Circularity’ context.</Typography></CardContent>
-          </Card>
-        </Grid>
-        <Grid size={cardGridSize}>
-          <Card sx={cardsx}>
-            <CardContent>
-              <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/green_eye.png" />
-              </Box>
-              <Typography sx={textCardTitle}>Our Vision</Typography>
-              <Typography sx={textCardContent}>To contribute towards a greener society through simple solutions and circularity models.</Typography></CardContent>
-          </Card>
-        </Grid>
-        <Grid size={cardGridSize}>
-          <Card sx={cardsx}>
-            <CardContent>
-              <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/green_target.png" />
-              </Box>
-              <Typography sx={textCardTitle}>Our Mission</Typography>
-              <Typography sx={textCardContent}>Leverage creativity and innovation to develop greener solutions.</Typography></CardContent>
-          </Card>
-        </Grid>
-        <Grid size={cardGridSize}>
-          <Card sx={cardsx}>
-            <CardContent>
-              <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
-                <img src="/green_truck.png" />
-              </Box>
-              <Typography sx={textCardTitle}>What drives us?</Typography>
-              <Typography sx={textCardContent}>A passion for sustainable living: ‘Greener choice, Better life’.</Typography></CardContent>
-          </Card>
-        </Grid>
+        {cards.map((c) =>
+          <Grid size={cardGridSize}>
+            <Card sx={cardsx}>
+              <CardContent>
+                <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
+                  <img src={c.image} />
+                </Box>
+                <Typography sx={textCardTitle}>{c.title}</Typography>
+                <Typography sx={textCardContent}>{c.content}</Typography></CardContent>
+            </Card>
+          </Grid>)}
       </Grid>
       <Divider variant="middle" sx={{ my: 12 }} />
       <Grid container sx={{ display: "flex" }}>

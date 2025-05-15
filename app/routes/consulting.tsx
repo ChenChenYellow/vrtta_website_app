@@ -1,8 +1,15 @@
 import { Box, collapseClasses, Grid, List, ListItem, Paper, Typography } from "@mui/material";
+import CommonSX from "~/components/CommonSX";
 
 export default function consulting() {
-    const listItemsx = { display: 'list-item', paddingY: 0 }
     const centerChildren = { display: "flex", justifyContent: "center" }
+    const listitems = [
+        "Quantifies the environmental impact of a product.",
+        "Helps differentiate a product in a competitive marketplace.",
+        "Recognizes the environmental hot-spots for cost and emissions in the product life cycle and suggests the areas of improvement.",
+        "Helps in defining realistic sustainability targets and aligning with ‘carbon-neutrality’ goals.",
+        "Helps in developing environmental product declarations [EPD].",
+    ]
     return <Box>
         <Box sx={{ ...centerChildren, mt: 12 }}>
             <Typography variant="h3" sx={{ fontWeight: "bold", color: "primary.dark" }}>Consulting</Typography>
@@ -38,11 +45,7 @@ export default function consulting() {
                     <Grid sx={{ my: 1 }}>
                         <Typography variant="body1" sx={{ fontWeight: "bold", textDecoration: "underline" }} >Benefits:</Typography>
                         <List sx={{ listStyleType: 'space-counter', ml: 4, fontWeight: "light" }}>
-                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Quantifies the environmental impact of a product.</Typography></ListItem>
-                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps differentiate a product in a competitive marketplace.</Typography></ListItem>
-                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Recognizes the environmental hot-spots for cost and emissions in the product life cycle and suggests the areas of improvement.</Typography></ListItem>
-                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in defining realistic sustainability targets and aligning with ‘carbon-neutrality’ goals.</Typography></ListItem>
-                            <ListItem sx={listItemsx}><Typography variant="body1" sx={{ fontWeight: "light" }}>Helps in developing environmental product declarations [EPD].</Typography></ListItem>
+                            {listitems.map((i) => <ListItem sx={CommonSX.listItem}><Typography variant="body1" sx={{ fontWeight: "light" }}>{i}</Typography></ListItem>)}
                         </List>
                     </Grid>
 

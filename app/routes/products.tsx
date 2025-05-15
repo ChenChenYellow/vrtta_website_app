@@ -5,6 +5,7 @@ import { Grade, Rowing } from "@mui/icons-material";
 import StickyButton from "~/components/StickyButton";
 import NavigationIcon from '@mui/icons-material/Navigation';
 import { useState } from "react";
+import CommonSX from "~/components/CommonSX";
 
 export default function products() {
     const [requestDemoVisible, setRequestDemoVisible] = useState(false)
@@ -23,6 +24,13 @@ export default function products() {
         backgroundImage: `linear-gradient( to ${options.direction}, ${options.startColor}, ${options.endColor})`,
         backgroundSize: "100%",
     }
+    const listitems = [
+        "Construction material suppliers",
+        "Architectural firms",
+        "Construction companies (helps LEED certification)",
+        "Interior design companies",
+        "Recycling companies",
+    ]
     const tableContent = [
         {
             parameters: "Ease of usage (Training)",
@@ -87,11 +95,7 @@ export default function products() {
                 <Box sx={box}>
                     <Typography variant="h3" sx={{ my: 2, fontWeight: "medium" }}>Applications</Typography>
                     <List sx={{ listStyleType: 'disc', ml: 4 }}>
-                        <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1">Construction material suppliers</Typography></ListItem>
-                        <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1">Architectural firms</Typography></ListItem>
-                        <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1">Construction companies (helps LEED certification)</Typography></ListItem>
-                        <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1">Interior design companies</Typography></ListItem>
-                        <ListItem sx={{ display: 'list-item', paddingY: 0 }}><Typography variant="body1">Recycling companies</Typography></ListItem>
+                        {listitems.map((i) => <ListItem sx={CommonSX.listItem}><Typography variant="body1">{i}</Typography></ListItem>)}
                     </List>
                 </Box>
             </Grid>
