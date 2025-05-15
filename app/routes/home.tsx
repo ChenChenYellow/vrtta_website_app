@@ -30,10 +30,7 @@ export default function Home() {
   }
   const textLeft = { textAlign: "left" }
   const textCenter = { textAlign: "center" }
-  const textSegoe = { fontFamily: "Segoe UI" }
   const textBold = { fontWeight: "bold" }
-  const textCardTitle = { ...textLeft, fontSize: "1.1rem", fontWeight: "medium", ...textSegoe }
-  const textCardContent = { ...textLeft, fontSize: "0.85rem", fontWeight: "regular", color: "grey", ...textSegoe }
   const options = {
     startColor: "#1FAF52",
     endColor: "#6CE58D",
@@ -134,8 +131,8 @@ export default function Home() {
                 <Box sx={{ justifyContent: "left", display: 'flex', width: 1, height: 50 }}>
                   <img src={c.image} />
                 </Box>
-                <Typography sx={textCardTitle}>{c.title}</Typography>
-                <Typography sx={textCardContent}>{c.content}</Typography></CardContent>
+                <Typography variant="body1" sx={{ ...textLeft, fontWeight: "medium" }}>{c.title}</Typography>
+                <Typography variant="body2" sx={{ ...textLeft, fontWeight: "regular", color: "grey" }}>{c.content}</Typography></CardContent>
             </Card>
           </Grid>)}
       </Grid>
