@@ -49,10 +49,10 @@ export default function news() {
     ]
     const [selectedYear, setSelectedYear] = useState<number | undefined>()
     return <Box>
-        <Box sx={{ ...CommonSX.centerChilren }}>
-            <Typography variant="h2" >News</Typography>
+        <Box sx={{ ...CommonSX.centerChilren, my: 8 }}>
+            <Typography variant="h2" sx={{ fontWeight: "bold", color: "primary.main" }}>News</Typography>
         </Box>
-        <Box sx={{ ...CommonSX.centerChilren }}>
+        <Box sx={{ ...CommonSX.centerChilren, my: 4 }}>
             <FormControl sx={{ width: "200px" }}>
                 <InputLabel>Select a year</InputLabel>
                 <Select label="Select a year" onChange={(event: { target: { value: number } }) => setSelectedYear(event.target.value)} >
@@ -60,7 +60,7 @@ export default function news() {
                 </Select>
             </FormControl>
         </Box>
-        <Box sx={{ ...CommonSX.centerChilren }}>
+        <Box sx={{ ...CommonSX.centerChilren, my: 2 }} >
             <Box sx={{ width: "1200px" }}>
                 {selectedYear != undefined &&
                     newsCollection.find((n, index) => n.year == selectedYear)?.newsList.map((n, index) =>
@@ -68,7 +68,7 @@ export default function news() {
                             <Box sx={{}}>
                                 <Typography variant="subtitle1">{n.title}</Typography>
                             </Box>
-                            <Divider />
+                            <Divider sx={{ width: "80%", my: 1, mb: 3 }} />
                             <Box>
                                 <Typography variant="body1">{n.content}</Typography>
                             </Box>
