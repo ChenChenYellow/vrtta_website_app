@@ -1,4 +1,4 @@
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { Box, Button, Fade, Grid, Link, TextField, Tooltip, Typography } from "@mui/material";
 import { Form } from "react-router";
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import MailIcon from '@mui/icons-material/Mail';
@@ -6,6 +6,9 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
 
 export default function contact() {
+    const address = "17560, Rue Grier, Pierrefonds, Montréal, Québec H9J2A8 Canada"
+    const email = "emailus@vrtta.green"
+    const phone = "(001) 438-882-5385"
     return <Box sx={{ mx: "auto", my: 8, maxWidth: "600px" }}>
         <Box sx={{}}>
             <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.main", fontWeight: "bold" }} >Get in Touch</Typography>
@@ -19,7 +22,9 @@ export default function contact() {
                 <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }} >
                     Find us at
                 </Typography>
-                <Typography variant="body1" >17560, Rue Grier, Pierrefonds, Montréal, Québec H9J2A8 Canada</Typography>
+                <Tooltip title="Copy to clipboard" followCursor slots={{ transition: Fade, }} slotProps={{ tooltip: { sx: { color: "primary.dark", backgroundColor: "primary.light", fontSize: "1rem" } } }}>
+                    <Typography variant="body1" onClick={() => navigator.clipboard.writeText(address)}>{address}</Typography>
+                </Tooltip>
             </Box>
         </Box>
         <Box sx={{ display: "flex", my: 2 }}>
@@ -29,7 +34,9 @@ export default function contact() {
             <Box>
                 <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }} >
                     Email us at</Typography>
-                <Typography variant="body1" >emailus@vrtta.green</Typography>
+                <Tooltip title="Copy to clipboard" followCursor slots={{ transition: Fade, }} slotProps={{ tooltip: { sx: { color: "primary.dark", backgroundColor: "primary.light", fontSize: "1rem" } } }}>
+                    <Typography variant="body1" onClick={() => navigator.clipboard.writeText(email)} >{email}</Typography>
+                </Tooltip>
             </Box>
         </Box>
         <Box sx={{ display: "flex", my: 2 }}>
@@ -39,7 +46,9 @@ export default function contact() {
             <Box>
                 <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }}>
                     Call us at</Typography>
-                <Typography variant="body1" >(001) 438-882-5385</Typography>
+                <Tooltip title="Copy to clipboard" followCursor slots={{ transition: Fade, }} slotProps={{ tooltip: { sx: { color: "primary.dark", backgroundColor: "primary.light", fontSize: "1rem" } } }}>
+                    <Typography variant="body1" onClick={() => navigator.clipboard.writeText(phone)}>{phone}</Typography>
+                </Tooltip>
             </Box>
         </Box>
     </Box>
