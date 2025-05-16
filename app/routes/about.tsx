@@ -5,7 +5,7 @@ export default function about() {
     const exmple = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quintesque eu, pretium quintesque eu, pretium quintesque eu, pretium quinar, he."
     return <Box sx={{ paddingY: 6, justifyContent: "center" }} component={Container}>
 
-        <Typography variant="h2" sx={{ color: "primary.dark", textAlign: "center", fontWeight: "bold" }}>About Us</Typography>
+        <Typography variant="h2" sx={{ color: "primary.main", textAlign: "center", fontWeight: "bold" }}>About Us</Typography>
         <Paper elevation={10} sx={{ backgroundColor: "primary.light", mx: 4, my: 6, paddingY: 2, paddingX: 2, maxWidth: "1200px" }}>
             <Typography variant="h3" sx={{ color: "secondary.contrastText", my: 4, mx: 2, fontWeight: "medium", }}>Our History</Typography>
             <Divider variant="middle" sx={{ width: "300px", boxShadow: 1 }} />

@@ -19,7 +19,7 @@ export default function Home() {
     my: 1,
     "&:hover": {
       boxShadow: 3,
-      color: "green"
+      color: "primary.main"
     },
     borderRadius: "12px",
     elevation: 10
@@ -28,7 +28,7 @@ export default function Home() {
   const textCenter = { textAlign: "center" }
   const textBold = { fontWeight: "bold" }
   const options = {
-    startColor: "#1FAF52",
+    startColor: "#659d32",
     endColor: "#6CE58D",
     direction: "right",
   };
@@ -69,9 +69,9 @@ export default function Home() {
   return <Container>
     <Box>
       <Box sx={{ my: 12 }}></Box>
-      <Typography variant="h2" sx={{ ...textBold, ...textCenter, }}>Sustainable Decision Making​</Typography>
+      <Typography variant="h2" sx={{ ...textBold, ...textCenter, }}>Empowering Sustain-Ability</Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="h1" sx={{ ...textVrtta, letterSpacing: 0 }}>Simplified</Typography>
+        <Typography variant="h1" sx={{ ...textVrtta, letterSpacing: 0 }}>Track, Act, Inspire</Typography>
       </Box>
       <Box sx={{ margin: 5 }}></Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -81,7 +81,7 @@ export default function Home() {
       <Box>
         <Grid container sx={{ display: "flex", justifyContent: "center" }}>
           <Button sx={{
-            color: "white", backgroundColor: "#16a249", width: 1, "&:hover": {
+            color: "white", backgroundColor: "primary.main", width: 1, "&:hover": {
               boxShadow: "0px 0px 1px 1px green"
             },
             borderRadius: "10px",

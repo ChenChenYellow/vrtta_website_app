@@ -6,8 +6,8 @@ import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#6CE58D",
-            dark: "#1FAF52",
+            main: "#659d32",
+            dark: "#365718",
             light: "#f3faf6",
             contrastText: "#757575"
         },

@@ -12,7 +12,7 @@ export default function consulting() {
     ]
     return <Box component={Container} sx={{ justifyContent: "center" }}>
         <Box sx={{ ...centerChildren, mt: 12 }}>
-            <Typography variant="h3" sx={{ fontWeight: "bold", color: "primary.dark" }}>Consulting</Typography>
+            <Typography variant="h3" sx={{ fontWeight: "bold", color: "primary.main" }}>Consulting</Typography>
         </Box>
         <Paper sx={{ ...centerChildren, mx: 3, my: 8, paddingY: 8, paddingX: 4, maxWidth: "1200px" }} elevation={8} >
             <Grid container direction={"column"} sx={{}}>

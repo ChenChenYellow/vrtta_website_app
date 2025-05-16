@@ -8,15 +8,15 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 export default function contact() {
     return <Box sx={{ mx: "auto", my: 8, maxWidth: "600px" }}>
         <Box sx={{}}>
-            <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.dark", fontWeight: "bold" }} >Get in Touch</Typography>
+            <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.main", fontWeight: "bold" }} >Get in Touch</Typography>
             <Typography variant="body1" sx={{ textAlign: "left", fontWeight: "medium" }}>Please fill out this form and we will get back to you as soon as possible.</Typography>
         </Box>
         <Box sx={{ display: "flex", my: 2 }}>
             <Box>
-                <LocationPinIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
+                <LocationPinIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.main" }} />
             </Box>
             <Box>
-                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold" }} >
+                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }} >
                     Find us at
                 </Typography>
                 <Typography variant="body1" >17560, Rue Grier, Pierrefonds, Montréal, Québec H9J2A8 Canada</Typography>
@@ -24,20 +24,20 @@ export default function contact() {
         </Box>
         <Box sx={{ display: "flex", my: 2 }}>
             <Box>
-                <MailIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
+                <MailIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.main" }} />
             </Box>
             <Box>
-                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold" }} >
+                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }} >
                     Email us at</Typography>
                 <Typography variant="body1" >emailus@vrtta.green</Typography>
             </Box>
         </Box>
         <Box sx={{ display: "flex", my: 2 }}>
             <Box>
-                <PhoneIphoneIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
+                <PhoneIphoneIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.main" }} />
             </Box>
             <Box>
-                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold" }}>
+                <Typography variant="subtitle2" sx={{ textAlign: "left", fontWeight: "bold", color: "primary.main" }}>
                     Call us at</Typography>
                 <Typography variant="body1" >(001) 438-882-5385</Typography>
             </Box>

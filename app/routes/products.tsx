@@ -1,15 +1,17 @@
-import { Avatar, Box, Button, Container, Divider, Drawer, Fab, Fade, Grid, Grow, Input, List, ListItem, makeStyles, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, tableHeadClasses, TableRow, TextField, Tooltip, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Avatar, Box, Button, Container, Divider, Drawer, Fab, Fade, Grid, Grow, Input, List, ListItem, makeStyles, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, tableHeadClasses, TableRow, TextField, Tooltip, Typography } from "@mui/material";
 import { Form } from "react-router";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Grade, Rowing } from "@mui/icons-material";
 import StickyButton from "~/components/StickyButton";
 import NavigationIcon from '@mui/icons-material/Navigation';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState } from "react";
 import CommonSX from "~/components/CommonSX";
 
 export default function products() {
     const [requestDemoVisible, setRequestDemoVisible] = useState(false)
     const [showFoot, setShowFoot] = useState(false);
+    const [faqExpended, setFAQExpended] = useState(false)
     const gridItem = { justifyContent: "center", display: "flex", my: 2 }
     const box = { width: { xs: 1, sm: 1, md: 800, lg: 800, xl: 800 }, mx: { xs: 4, sm: 4, md: 0, lg: 0, xl: 0 } }
     const options = {
@@ -83,6 +85,24 @@ export default function products() {
             arivu: "**"
         }
     ]
+    const faqContent = [
+        {
+            question: "This first question",
+            answer: "This is first answer"
+        },
+        {
+            question: "This second question",
+            answer: "This is second answer"
+        },
+        {
+            question: "This third question",
+            answer: "This is third answer"
+        },
+        {
+            question: "This fourth question",
+            answer: "This is fourth answer"
+        },
+    ]
     return <Box>
         <Grid container direction={"column"}>
             <Grid sx={gridItem}>
@@ -150,6 +170,15 @@ export default function products() {
                         </Table>
                     </TableContainer>
                     <Typography variant="body2" sx={{ mb: 6 }}>Note: More * signifies better performance</Typography>
+                </Box>
+            </Grid>
+            <Grid sx={gridItem}>
+                <Box sx={box}>
+                    {faqContent.map((f, index) => <Accordion key={index} expanded={faqExpended} onChange={() => setFAQExpended(!faqExpended)}>
+                        <AccordionSummary expandIcon={<ArrowDownwardIcon />} sx={{ backgroundColor: "primary.light" }}>{f.question}</AccordionSummary>
+                        <AccordionDetails>{f.answer}</AccordionDetails>
+                    </Accordion>)}
+
                 </Box>
             </Grid>
         </Grid>
@@ -231,7 +260,7 @@ export default function products() {
                         </Grid>
                         <Grid sx={{ justifyContent: "right", display: "flex" }}>
                             <Button type="submit" sx={{
-                                textTransform: "none", backgroundColor: "primary.dark",
+                                textTransform: "none", backgroundColor: "primary.main",
                                 color: "primary.light", paddingY: 1.5, paddingX: 2, borderRadius: "8px",
                                 "&:hover": {
                                     boxShadow: 2,
