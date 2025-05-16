@@ -10,6 +10,9 @@ export default function contact() {
     const email = "emailus@vrtta.green"
     const phone = "(001) 438-882-5385"
     return <Box sx={{ mx: "auto", my: 8, maxWidth: "600px" }}>
+        <Box sx={{ paddingBottom: 8 }}>
+            <Typography variant="h2" sx={{ textAlign: "center", color: "primary.main", fontWeight: "bold" }}>Contact Us</Typography>
+        </Box>
         <Box sx={{}}>
             <Typography variant="subtitle1" sx={{ textAlign: "left", color: "primary.main", fontWeight: "bold" }} >Get in Touch</Typography>
             <Typography variant="body1" sx={{ textAlign: "left", fontWeight: "medium" }}>Please fill out this form and we will get back to you as soon as possible.</Typography>
