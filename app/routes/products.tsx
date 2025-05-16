@@ -179,7 +179,6 @@ export default function products() {
                         <AccordionSummary expandIcon={<ArrowDownwardIcon />} sx={{ backgroundColor: "primary.light" }}>{f.question}</AccordionSummary>
                         <AccordionDetails>{f.answer}</AccordionDetails>
                     </Accordion>)}
-
                 </Box>
             </Grid>
         </Grid>
