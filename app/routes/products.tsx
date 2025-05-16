@@ -174,6 +174,7 @@ export default function products() {
             </Grid>
             <Grid sx={gridItem}>
                 <Box sx={box}>
+                    <Typography variant="h3" sx={{ fontWeight: "medium", mb: 4 }}>FAQ</Typography>
                     {faqContent.map((f, index) => <Accordion key={index} expanded={faqExpended} onChange={() => setFAQExpended(!faqExpended)}>
                         <AccordionSummary expandIcon={<ArrowDownwardIcon />} sx={{ backgroundColor: "primary.light" }}>{f.question}</AccordionSummary>
                         <AccordionDetails>{f.answer}</AccordionDetails>
