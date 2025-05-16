@@ -2,7 +2,7 @@
   "name": "vrtta_website_app",
   "private": true,
   "type": "module",
-  "homepage": "https://vrtta-website-app.onrender.com",
+  "homepage": "https://chenchenyellow.github.io/vrtta_website_app",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
