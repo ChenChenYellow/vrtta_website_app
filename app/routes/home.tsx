@@ -4,10 +4,6 @@ import { CenterFocusStrong, Margin, Padding } from "@mui/icons-material";
 import AbcIcon from '@mui/icons-material/Abc';
 import { red } from "@mui/material/colors";
 import { Form } from "react-router";
-import LocationPinIcon from '@mui/icons-material/LocationPin';
-import MailIcon from '@mui/icons-material/Mail';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -18,7 +14,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   const cardsx = {
     width: "95%",
-    height: { sm: 200, md: 200, lg: 200 },
+    height: 200,
     mx: 'auto',
     my: 1,
     "&:hover": {
@@ -72,12 +68,11 @@ export default function Home() {
   },]
   return <Container>
     <Box>
-      <Box sx={{ my: 10 }}></Box>
+      <Box sx={{ my: 12 }}></Box>
+      <Typography variant="h2" sx={{ ...textBold, ...textCenter, }}>Sustainable Decision Making​</Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="h1" sx={textVrtta}>Vrtta</Typography>
+        <Typography variant="h1" sx={{ ...textVrtta, letterSpacing: 0 }}>Simplified</Typography>
       </Box>
-      <Box sx={{ my: 3 }}></Box>
-      <Typography variant="h2" sx={{ ...textBold, ...textCenter }}>Greener choice, Better life​</Typography>
       <Box sx={{ margin: 5 }}></Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Typography variant="body1" sx={{ ...textNormal, maxWidth: 600 }}>Analyze environmental impacts, optimize supply chains, and achieve sustainability goals with our comprehensive life cycle assessment platform.</Typography>
@@ -111,15 +106,21 @@ export default function Home() {
         </Grid>
       </Box>
     </Box>
-    <Box sx={{ my: 10 }}></Box>
+    <Divider variant="middle" sx={{ my: 8 }} />
     <Box>
-      <Typography variant="subtitle1" sx={textSubTitle}>Welcome</Typography>
-      <Box sx={{ my: 2 }}></Box>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      {/* <Typography variant="subtitle1" sx={textSubTitle}>Welcome</Typography> */}
+      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
         <Box>
-          <Typography variant="body1" sx={{ ...textNormal, display: "inline" }}>Vrtta Green Solutions Inc. (</Typography>
-          <Typography variant="body1" sx={{ ...textNormal, color: "green", fontWeight: "bold", display: "inline" }}>VRTTA</Typography>
-          <Typography variant="body1" sx={{ ...textNormal, display: "inline" }}>), is a Montreal-based sustainability company.</Typography>
+          <Typography variant="subtitle1" sx={{ display: "inline", fontWeight: "light" }}>Vrtta Green Solutions Inc. (</Typography>
+          <Typography variant="subtitle1" sx={{ color: "primary.dark", fontWeight: "medium", display: "inline" }}>VRTTA</Typography>
+          <Typography variant="subtitle1" sx={{ display: "inline", fontWeight: "light" }}>), is a Montreal-based sustainability company.</Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
+        <Box sx={{ maxWidth: "800px" }}>
+          <Typography variant="subtitle2" sx={{ display: "inline", fontWeight: "light" }}  >Our unwavering belief is encapsulated in our tagline: ‘</Typography>
+          <Typography variant="subtitle2" sx={{ fontWeight: "medium", color: "primary.dark", display: "inline" }} >Greener Choice, Better Life.</Typography>
+          <Typography variant="subtitle2" sx={{ display: "inline", fontWeight: "light" }}  >‘ The name VRTTA, derived from the Sanskrit term for ‘Circle,’ embodies our commitment to closed-loop sustainability.</Typography>
         </Box>
       </Box>
       <Divider variant="middle" sx={{ my: 8 }} />
@@ -135,99 +136,6 @@ export default function Home() {
                 <Typography variant="body2" sx={{ ...textLeft, fontWeight: "regular", color: "grey" }}>{c.content}</Typography></CardContent>
             </Card>
           </Grid>)}
-      </Grid>
-      <Divider variant="middle" sx={{ my: 12 }} />
-      <Grid container sx={{ display: "flex" }}>
-        <Grid size={{ sm: 12, md: 4 }} sx={{ justifyContent: "center", display: "flex", alignContent: "center" }}>
-          <img src="/cycle_of_life.png" />
-
-        </Grid>
-        <Grid size={{ sm: 12, md: 8 }} sx={{ paddingX: 4, my: "auto" }}>
-          <Typography variant="body1" sx={{ ...textNormal, display: "inline" }}  >Our unwavering belief is encapsulated in our tagline: ‘</Typography>
-          <Typography variant="body1" sx={{ ...textNormal, fontWeight: "bold", color: "green", display: "inline" }} >Greener Choice, Better Life.</Typography>
-          <Typography variant="body1" sx={{ ...textNormal, display: "inline" }}  >‘ The name VRTTA, derived from the Sanskrit term for ‘Circle,’ embodies our commitment to closed-loop sustainability.
-            If you are visiting us, we know you want to take action towards environmental well-being, and we appreciate you for that!</Typography>
-          <Box></Box>
-          <Typography variant="body1" sx={{ ...textNormal, display: "inline" }} >If you are visiting us, we know you want to take action towards environmental well-being, and we appreciate you for that!</Typography>
-        </Grid>
-      </Grid>
-      <Divider variant="middle" sx={{ my: 12 }} />
-      <Grid container sx={{ display: "flex", mx: 2 }}>
-        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} sx={{ paddingX: 2, mb: 8 }}>
-          <Box sx={{ justifyContent: "left" }}>
-            <Typography variant="subtitle1" sx={{ ...textSubTitle, textAlign: "left", color: "primary.dark" }} >Get in Touch</Typography>
-            <Typography variant="body1" sx={{ ...textLeft, fontWeight: "medium" }}>Please fill out this form and we will get back to you as soon as possible.</Typography>
-          </Box>
-          <Box sx={{ display: "flex", my: 2 }}>
-            <Box>
-              <LocationPinIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
-            </Box>
-            <Box>
-              <Typography variant="subtitle2" sx={{ ...textLeft, fontWeight: "bold" }} >
-                Find us at
-              </Typography>
-              <Typography variant="body1" >17560, Rue Grier, Pierrefonds, Montréal, Québec H9J2A8 Canada</Typography>
-            </Box>
-          </Box>
-          <Box sx={{ display: "flex", my: 2 }}>
-            <Box>
-              <MailIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
-            </Box>
-            <Box>
-              <Typography variant="subtitle2" sx={{ ...textLeft, fontWeight: "bold" }} >
-                Email us at</Typography>
-              <Typography variant="body1" >emailus@vrtta.green</Typography>
-            </Box>
-          </Box>
-          <Box sx={{ display: "flex", my: 2 }}>
-            <Box>
-              <PhoneIphoneIcon sx={{ fontSize: "2rem", mr: 2, color: "primary.dark" }} />
-            </Box>
-            <Box>
-              <Typography variant="subtitle2" sx={{ ...textLeft, fontWeight: "bold" }}>
-                Call us at</Typography>
-              <Typography variant="body1" >(001) 438-882-5385</Typography>
-            </Box>
-          </Box>
-        </Grid>
-        <Grid sx={{
-          backgroundColor: "primary.light", boxShadow: 4, "&:hover": {
-            boxShadow: 8
-          }, paddingX: 2, mb: 8
-        }} size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
-          <Form>
-            <Box sx={{ my: 2, mt: 4, justifyContent: "center", display: "flex" }}>
-              <Typography variant="subtitle1" sx={{ ...textCenter, fontWeight: "bold", color: "primary.dark" }}>Contact Us</Typography>
-            </Box>
-            <Box sx={{ my: 2, mx: 2 }}>
-              <Grid container direction={"column"}>
-                <Grid sx={{ mx: "auto", my: 2 }}>
-                  <TextField placeholder="Your Name"
-                    variant="standard" sx={{ width: 300 }} />
-                </Grid>
-                <Grid sx={{ mx: "auto", my: 2 }}>
-                  <TextField placeholder="Your Email"
-                    variant="standard" sx={{ width: 300 }} />
-                </Grid>
-                <Grid sx={{ mx: "auto", my: 2 }}>
-                  <TextField placeholder="Subject"
-                    variant="standard" sx={{ width: 300 }} />
-                </Grid>
-                <Grid sx={{ mx: "auto", my: 2 }}>
-                  <TextField placeholder="Your Message" multiline sx={{ width: 300 }} minRows={3} />
-                </Grid>
-                <Grid sx={{ mx: "auto", my: 2 }}>
-                  <Button type="submit" sx={{
-                    textTransform: "none", backgroundColor: "primary.dark", color: "primary.contrastText", paddingY: 1.5, paddingX: 3, "&:hover": {
-                      boxShadow: 3
-                    },
-                    borderRadius: "10px"
-                  }}>Send Message</Button>
-                </Grid>
-              </Grid>
-            </Box>
-          </Form>
-        </Grid>
       </Grid>
     </Box>
     <Box sx={{ my: 4 }}></Box>

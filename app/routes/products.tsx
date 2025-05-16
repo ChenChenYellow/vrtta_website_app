@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Drawer, Fab, Grid, Input, List, ListItem, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, tableHeadClasses, TableRow, TextField, Typography } from "@mui/material";
+import { Avatar, Box, Button, Container, Divider, Drawer, Fab, Fade, Grid, Grow, Input, List, ListItem, makeStyles, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, tableHeadClasses, TableRow, TextField, Tooltip, Typography } from "@mui/material";
 import { Form } from "react-router";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Grade, Rowing } from "@mui/icons-material";
@@ -9,6 +9,7 @@ import CommonSX from "~/components/CommonSX";
 
 export default function products() {
     const [requestDemoVisible, setRequestDemoVisible] = useState(false)
+    const [showFoot, setShowFoot] = useState(false);
     const gridItem = { justifyContent: "center", display: "flex", my: 2 }
     const box = { width: { xs: 1, sm: 1, md: 800, lg: 800, xl: 800 }, mx: { xs: 4, sm: 4, md: 0, lg: 0, xl: 0 } }
     const options = {
@@ -16,6 +17,11 @@ export default function products() {
         endColor: "#dcfae9",
         direction: "right",
     };
+
+    const foot = {
+        width: 268,
+        height: 381
+    }
     const tableHeaderText = {
         color: "secondary.contrastText",
         fontWeight: "bold",
@@ -24,6 +30,10 @@ export default function products() {
         backgroundImage: `linear-gradient( to ${options.direction}, ${options.startColor}, ${options.endColor})`,
         backgroundSize: "100%",
     }
+    const products = [
+        "Arivu ABC",
+        "Arivu FLoS"
+    ]
     const listitems = [
         "Construction material suppliers",
         "Architectural firms",
@@ -76,7 +86,9 @@ export default function products() {
     return <Box>
         <Grid container direction={"column"}>
             <Grid sx={gridItem}>
-                <img src="/arivu_logo.png" />
+                <Box sx={{ maxWidth: "400px", my: 8 }}>
+                    <img src="/arivu_logo.jpg" />
+                </Box>
             </Grid>
             <Grid sx={gridItem} >
                 <Box sx={box} component={Paper} elevation={4}>
@@ -142,33 +154,38 @@ export default function products() {
             </Grid>
         </Grid>
         <Box sx={{
-            position: "sticky",
+            position: "fixed",
             bottom: 0,
+            right: 0,
+
             justifyContent: "right",
             display: "flex"
         }}>
-            <Button sx={{
-                width: "100px",
-                height: "100px",
-                backgroundColor: "secondary.light",
-                borderRadius: "0px",
-                borderTopLeftRadius: "100px",
-                mt: "-20px",
-                color: "black",
-                paddingLeft: "30px",
-                paddingTop: "30px",
-                textTransform: "none",
-                "&:hover": {
-                    width: "110px",
-                    height: "110px",
-                    backgroundColor: "secondary.main",
-                    borderRadius: "0px",
-                    borderTopLeftRadius: "110px",
-                    boxShadow: 1,
-                    mt: "-30px",
-                }
-            }}
-                onClick={() => setRequestDemoVisible(true)}>Request Demo</Button>
+            <Tooltip title={"Request Demo"} followCursor slots={{ transition: Fade, }} slotProps={{ tooltip: { sx: { color: "primary.dark", backgroundColor: "primary.light", fontSize: "1rem" } } }}>
+                <Button onMouseOver={() => setShowFoot(true)} onMouseLeave={() => setShowFoot(false)} onClick={() => setRequestDemoVisible(true)} sx={{
+                    "&:hover": {
+                        backgroundColor: "transparent"
+                    }
+                }}>
+                    <Grid container direction={"column"} sx={CommonSX.centerChilren}>
+                        <Fade in={showFoot || requestDemoVisible} {...(showFoot ? { timeout: 6000 } : { timeout: 2000 })}><Box sx={{ width: `${foot.width / 6}px`, height: `${foot.height / 6}px`, mx: "auto" }}>
+                            <img src="/green_foot_left.png" />
+                        </Box></Fade>
+                        <Fade in={showFoot || requestDemoVisible} {...(showFoot ? { timeout: 4000 } : { timeout: 4000 })}><Box sx={{ width: `${foot.width / 5}px`, height: `${foot.height / 5}px`, mx: "auto" }}>
+                            <img src="/green_foot_right.png" />
+                        </Box></Fade>
+                        <Fade in={showFoot || requestDemoVisible} {...(showFoot ? { timeout: 2000 } : { timeout: 6000 })}><Box sx={{ width: `${foot.width / 4}px`, height: `${foot.height / 4}px`, mx: "auto" }}>
+                            <img src="/green_foot_left.png" />
+                        </Box></Fade>
+
+                        <Box sx={{
+                            width: `${foot.width / 3}px`, height: `${foot.height / 3}px`, mx: "auto",
+                        }}>
+                            <img src="/green_foot_right.png" />
+                        </Box>
+                    </Grid>
+                </Button>
+            </Tooltip>
         </Box>
         <Drawer open={requestDemoVisible} anchor="bottom" onClose={() => setRequestDemoVisible(false)} slotProps={{
             paper: { sx: { width: { xs: "90%", sm: "90%", md: "810px" }, mx: "auto", backgroundColor: "primary.light" } }
@@ -202,10 +219,8 @@ export default function products() {
                             <Typography variant="body1" sx={{ fontWeight: "bold" }}>Please select the product</Typography>
                         </Grid>
                         <Grid sx={{ my: 2 }}>
-                            <Select variant="standard" defaultValue={"Arivu"} sx={{ width: 1 }} >
-                                <MenuItem value={"Arivu"}>Arivu</MenuItem>
-                                <MenuItem value={"Punar"}>Punar</MenuItem>
-                                <MenuItem value={"Gaddi"}>Gaddi</MenuItem>
+                            <Select variant="standard" defaultValue={products[0]} sx={{ width: 1 }} >
+                                {products.map((p, index) => <MenuItem value={p} key={index}>{p}</MenuItem>)}
                             </Select>
                         </Grid>
                         <Grid>
@@ -217,11 +232,9 @@ export default function products() {
                         <Grid sx={{ justifyContent: "right", display: "flex" }}>
                             <Button type="submit" sx={{
                                 textTransform: "none", backgroundColor: "primary.dark",
-                                color: "primary.contrastText", paddingY: 1.5, paddingX: 2, borderRadius: "8px",
+                                color: "primary.light", paddingY: 1.5, paddingX: 2, borderRadius: "8px",
                                 "&:hover": {
                                     boxShadow: 2,
-                                    border: 1,
-                                    borderColor: "primary.light"
                                 }
                             }}>Submit</Button>
                         </Grid>
@@ -229,5 +242,5 @@ export default function products() {
                 </Box>
             </Form>
         </Drawer>
-    </Box>
+    </Box >
 }

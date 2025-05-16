@@ -1,4 +1,4 @@
-import { Box, collapseClasses, Grid, List, ListItem, Paper, Typography } from "@mui/material";
+import { Box, collapseClasses, Container, Grid, List, ListItem, Paper, Typography } from "@mui/material";
 import CommonSX from "~/components/CommonSX";
 
 export default function consulting() {
@@ -10,12 +10,12 @@ export default function consulting() {
         "Helps in defining realistic sustainability targets and aligning with ‘carbon-neutrality’ goals.",
         "Helps in developing environmental product declarations [EPD].",
     ]
-    return <Box>
+    return <Box component={Container} sx={{ justifyContent: "center" }}>
         <Box sx={{ ...centerChildren, mt: 12 }}>
             <Typography variant="h3" sx={{ fontWeight: "bold", color: "primary.dark" }}>Consulting</Typography>
         </Box>
-        <Paper sx={{ ...centerChildren, mx: 3, my: 8, paddingY: 8, paddingX: 4 }} elevation={8} >
-            <Grid container direction={"column"} sx={{ maxWidth: "800px" }}>
+        <Paper sx={{ ...centerChildren, mx: 3, my: 8, paddingY: 8, paddingX: 4, maxWidth: "1200px" }} elevation={8} >
+            <Grid container direction={"column"} sx={{}}>
                 <Grid container >
                     <Grid size={{ xs: 12, sm: 4 }}>
                         <img src="/green_foot.png" />

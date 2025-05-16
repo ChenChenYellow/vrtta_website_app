@@ -6,7 +6,7 @@ const theme = createTheme({
             main: "#6CE58D",
             dark: "#1FAF52",
             light: "#f3faf6",
-            contrastText: "#ffffff"
+            contrastText: "#757575"
         },
         secondary: {
             main: "#cbf7de",
@@ -15,7 +15,7 @@ const theme = createTheme({
         }
     },
     typography: {
-        fontFamily: "Segoe UI",
+        fontFamily: "Poppins",
         h1: {
             fontSize: "3.6rem"
         },

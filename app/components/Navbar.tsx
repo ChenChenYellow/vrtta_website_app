@@ -16,7 +16,8 @@ import {
     useMediaQuery,
     useTheme,
     createSvgIcon,
-    Icon
+    Icon,
+    LinearProgress
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -24,17 +25,17 @@ import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-const navItems = [
-    { title: 'Home', href: '/', icon: <HomeIcon /> },
-    { title: 'Products', href: '/products', icon: <CategoryIcon /> },
-    { title: 'Consulting', href: '/consulting', icon: <ContactMailIcon /> },
-];
-
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [language, setLanguage] = useState("English")
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const navItems = [
+        { title: 'Home', href: '/', icon: <HomeIcon /> },
+        { title: 'Consulting', href: '/consulting', icon: <ContactMailIcon /> },
+        { title: 'Products', href: '/products', icon: <CategoryIcon /> },
+    ];
+    const [progress, setProgress] = useState([0, 0, 0])
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -45,22 +46,10 @@ const Navbar = () => {
         <AppBar position="sticky" color="default" elevation={0} sx={{ bgcolor: 'white' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                    <Typography
-                        variant="h6"
-                        component={RouterLink}
-                        to="/"
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            fontWeight: 700,
-                            color: 'green',
-                            textDecoration: 'none',
-                            letterSpacing: 2
-                        }}
-                    >
-                        Vrtta
-                    </Typography>
-
+                    <Box sx={{ my: 1 }}>
+                        <RouterLink to={"/"} >
+                            <img src='vrtta.png' />
+                        </RouterLink></Box>
                     {isMobile ? (
                         <IconButton
                             color="inherit"
@@ -72,30 +61,45 @@ const Navbar = () => {
                         </IconButton>
                     ) : (
                         <Box sx={{ display: 'flex' }}>
-                            {navItems.map((item) => (
+                            {navItems.map((item, index) => (
                                 <Box
-                                    key={item.title}>
+                                    key={item.title}
+                                    sx={{}}>
                                     <Button
                                         component={RouterLink}
                                         to={item.href}
                                         sx={{
-                                            mx: 0.3,
+                                            mx: 0, paddingX: 1.5,
                                             color: '#424242',
                                             '&:hover': {
-                                                color: 'green',
-                                                backgroundColor: "#c8e6c9"
+                                                color: 'secondary.contrastText',
+                                                backgroundColor: "primary.light"
                                             },
+                                            borderRadius: 0
+                                        }}
+                                        onMouseEnter={() => {
+                                            setProgress((prev) => prev.map((p, i) => i == index ? 100 : p))
+                                        }}
+                                        onMouseLeave={() => {
+                                            setProgress((prev) => prev.map((p, i) => i == index ? 0 : p))
                                         }}
                                     >
                                         {item.icon}
                                         <Typography sx={{ textTransform: "none", ml: 0.4, fontFamily: "Segoe UI", fontSize: "0.85rem" }}>
                                             {item.title}
                                         </Typography>
-                                        <Box ></Box>
-                                    </Button></Box>
+                                    </Button>
+                                    <LinearProgress variant='determinate' value={progress[index]} sx={{
+                                        backgroundColor: "white",
+                                        color: "primary.dark",
+                                        "& .MuiLinearProgress-bar1": {
+                                            transitionDuration: "0.2s"
+                                        }
+                                    }} />
+                                </Box>
                             ))}
                             {language == "English" ?
-                                <IconButton onClick={() => setLanguage("French")}>
+                                <IconButton onClick={() => setLanguage("French")} sx={{ "&:hover": { backgroundColor: "primary.light" } }}>
                                     <Icon>
                                         <img src={"/France_Flag.svg"} />
                                     </Icon>
@@ -122,7 +126,7 @@ const Navbar = () => {
                         boxSizing: 'border-box',
                         width: 180,
                         padding: 2,
-                        height: 260
+                        height: 270
                     },
                 }}
             >
@@ -132,20 +136,33 @@ const Navbar = () => {
                     </IconButton>
                 </Box>
                 <List>
-                    {navItems.map((item) => (
-                        <ListItem
-                            key={item.title}
-                            component={RouterLink}
-                            to={item.href}
-                            onClick={handleDrawerToggle}
-                            sx={{
-                                "&:hover":
-                                    { backgroundColor: "primary.main" },
+                    {navItems.map((item, index) => (
+                        <Box key={item.title}>
+                            <ListItem
+                                component={RouterLink}
+                                to={item.href}
+                                onClick={handleDrawerToggle}
+                                sx={{
+                                    "&:hover":
+                                        { backgroundColor: "primary.light" },
 
-                            }}
-                        >
-                            <ListItemText primary={item.title} slotProps={{ primary: { fontFamily: "Segoe UI", fontSize: "0.85rem" } }} />
-                        </ListItem>
+                                }}
+                                onMouseEnter={() => {
+                                    setProgress((prev) => prev.map((p, i) => i == index ? 100 : p))
+                                }}
+                                onMouseLeave={() => {
+                                    setProgress((prev) => prev.map((p, i) => i == index ? 0 : p))
+                                }}
+                            >
+                                <ListItemText primary={item.title} slotProps={{ primary: { fontFamily: "Segoe UI", fontSize: "0.85rem" } }} />
+                            </ListItem>
+                            <LinearProgress variant='determinate' value={progress[index]} sx={{
+                                backgroundColor: "white",
+                                "& .MuiLinearProgress-bar1": {
+                                    transitionDuration: "0.2s"
+                                }
+                            }} />
+                        </Box>
                     ))}
                 </List>
             </Drawer>
