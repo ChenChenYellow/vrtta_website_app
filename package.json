@@ -21,6 +21,7 @@
     "@react-router/serve": "^7.5.3",
     "isbot": "^5.1.27",
     "mui": "^0.0.1",
+    "mui-player": "^1.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-google-recaptcha": "^3.1.0",

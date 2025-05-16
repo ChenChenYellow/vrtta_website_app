@@ -4,6 +4,8 @@ import { CenterFocusStrong, Margin, Padding } from "@mui/icons-material";
 import AbcIcon from '@mui/icons-material/Abc';
 import { red } from "@mui/material/colors";
 import { Form } from "react-router";
+import 'mui-player/dist/mui-player.min.css'
+
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -124,7 +126,15 @@ export default function Home() {
         </Box>
       </Box>
       <Divider variant="middle" sx={{ my: 8 }} />
-      <Grid container sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
+        <Card >
+          <CardMedia component='iframe'
+            image={"/How To Deploy A React Vite App To Github Pages (Simple)-(1080p30).mp4"}
+            sx={{ height: "200px", width: "400px" }}
+          />
+        </Card>
+      </Box>
+      <Grid container sx={{ display: "flex", mb: 4 }}>
         {cards.map((c) =>
           <Grid size={cardGridSize}>
             <Card sx={cardsx}>
@@ -138,7 +148,6 @@ export default function Home() {
           </Grid>)}
       </Grid>
     </Box>
-    <Box sx={{ my: 4 }}></Box>
   </Container>;
 }
 
