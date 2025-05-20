@@ -1,5 +1,4 @@
 import { Box, Container, Divider, Paper, Typography } from "@mui/material";
-import CommonSX from "~/components/CommonSX";
 
 export default function about() {
     const exmple = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quintesque eu, pretium quintesque eu, pretium quintesque eu, pretium quinar, he."

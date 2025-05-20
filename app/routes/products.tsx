@@ -1,11 +1,7 @@
-import { Accordion, AccordionDetails, AccordionSummary, Avatar, Box, Button, Container, Divider, Drawer, Fab, Fade, Grid, Grow, Input, List, ListItem, makeStyles, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, tableHeadClasses, TableRow, TextField, Tooltip, Typography } from "@mui/material";
-import { Form } from "react-router";
-import ReCAPTCHA from 'react-google-recaptcha';
-import { Grade, Rowing } from "@mui/icons-material";
-import StickyButton from "~/components/StickyButton";
-import NavigationIcon from '@mui/icons-material/Navigation';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Drawer, Fade, Grid, List, ListItem, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Tooltip, Typography } from "@mui/material";
 import { useState } from "react";
+import { Form } from "react-router";
 import CommonSX from "~/components/CommonSX";
 
 export default function products() {

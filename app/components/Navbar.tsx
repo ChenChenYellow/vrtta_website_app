@@ -1,29 +1,28 @@
 
-import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import CategoryIcon from '@mui/icons-material/Category';
+import CloseIcon from '@mui/icons-material/Close';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import HomeIcon from '@mui/icons-material/Home';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
     AppBar,
-    Toolbar,
-    Typography,
-    Button,
     Box,
+    Button,
     Container,
-    IconButton,
     Drawer,
+    Icon,
+    IconButton,
+    LinearProgress,
     List,
     ListItem,
     ListItemText,
+    Toolbar,
+    Typography,
     useMediaQuery,
-    useTheme,
-    createSvgIcon,
-    Icon,
-    LinearProgress
+    useTheme
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import HomeIcon from '@mui/icons-material/Home';
-import CategoryIcon from '@mui/icons-material/Category';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);

@@ -1,4 +1,4 @@
-import { Box, collapseClasses, Container, Grid, List, ListItem, Paper, Typography } from "@mui/material";
+import { Box, Container, Grid, List, ListItem, Paper, Typography } from "@mui/material";
 import CommonSX from "~/components/CommonSX";
 
 export default function consulting() {

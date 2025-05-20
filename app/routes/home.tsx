@@ -1,10 +1,6 @@
+import { Box, Button, Card, CardContent, CardMedia, Container, Divider, Grid, Typography } from "@mui/material";
+import 'mui-player/dist/mui-player.min.css';
 import type { Route } from "./+types/home";
-import { Avatar, Box, Button, Card, CardContent, CardHeader, CardMedia, colors, Container, Divider, Grid, IconButton, TextField, Typography } from "@mui/material";
-import { CenterFocusStrong, Margin, Padding } from "@mui/icons-material";
-import AbcIcon from '@mui/icons-material/Abc';
-import { red } from "@mui/material/colors";
-import { Form } from "react-router";
-import 'mui-player/dist/mui-player.min.css'
 
 export function meta({ }: Route.MetaArgs) {
   return [
