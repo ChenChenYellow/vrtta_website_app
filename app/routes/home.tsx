@@ -110,7 +110,6 @@ export default function Home() {
     </Box>
     <Divider variant="middle" sx={{ my: 8 }} />
     <Box>
-      {/* <Typography variant="subtitle1" sx={textSubTitle}>Welcome</Typography> */}
       <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
         <Box>
           <Typography variant="subtitle1" sx={{ display: "inline", fontWeight: "light" }}>Vrtta Green Solutions Inc. (</Typography>
@@ -126,7 +125,7 @@ export default function Home() {
         </Box>
       </Box>
       <Divider variant="middle" sx={{ my: 8 }} />
-      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", my: 4 }}>
         <Card >
           <CardMedia component='iframe'
             image={"/Arivu_Video.mp4"}
@@ -134,7 +133,8 @@ export default function Home() {
           />
         </Card>
       </Box>
-      <Grid container sx={{ display: "flex", mb: 4 }}>
+      <Divider sx={{ my: 4 }} />
+      <Grid container sx={{ display: "flex", my: 4 }}>
         {cards.map((c) =>
           <Grid size={cardGridSize}>
             <Card sx={cardsx}>
