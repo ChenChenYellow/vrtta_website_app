@@ -129,8 +129,8 @@ export default function Home() {
       <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
         <Card >
           <CardMedia component='iframe'
-            image={"/How To Deploy A React Vite App To Github Pages (Simple)-(1080p30).mp4"}
-            sx={{ height: "200px", width: "400px" }}
+            image={"/Arivu_Video.mp4"}
+            sx={{ height: { sm: "360px", md: "480px", lg: "720px" }, width: { sm: "640px", md: "853px", lg: "1280px" } }}
           />
         </Card>
       </Box>
