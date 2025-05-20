@@ -47,7 +47,7 @@ export default function news() {
             ]
         }
     ]
-    const [selectedYear, setSelectedYear] = useState<number | undefined>()
+    const [selectedYear, setSelectedYear] = useState<number | undefined>(newsCollection[0].year)
     return <Box>
         <Box sx={{ ...CommonSX.centerChilren, my: 8 }}>
             <Typography variant="h2" sx={{ fontWeight: "bold", color: "primary.main" }}>News</Typography>
@@ -55,7 +55,7 @@ export default function news() {
         <Box sx={{ ...CommonSX.centerChilren, my: 4 }}>
             <FormControl sx={{ width: "200px" }}>
                 <InputLabel>Select a year</InputLabel>
-                <Select label="Select a year" onChange={(event: { target: { value: number } }) => setSelectedYear(event.target.value)} >
+                <Select label="Select a year" onChange={(event: { target: { value: number } }) => setSelectedYear(event.target.value)} defaultValue={newsCollection[0].year}>
                     {newsCollection.map((n, index) => <MenuItem key={index} value={n.year}> {n.year}</MenuItem>)}
                 </Select>
             </FormControl>
