@@ -90,7 +90,7 @@ export default function Home() {
     },
   ];
   return (
-    <Container>
+    <Box>
       <Box sx={{ backgroundImage: `linear-gradient(145deg, white, ${secondaryColors[4]})` }}>
         <Box sx={{ paddingY: 2 }}></Box>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
@@ -224,7 +224,7 @@ export default function Home() {
           ))}
         </Grid>
       </Box> */}
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 4 }}>
         <Box sx={{ paddingY: 5 }} />
         <Box sx={{}}>
           <Typography sx={{ ...title_1, fontWeight: 600, textAlign: "center" }}>Our Expertise</Typography>
@@ -260,6 +260,6 @@ export default function Home() {
         </Box>
         <Box sx={{ paddingY: 7 }} />
       </Box>
-    </Container>
+    </Box>
   );
 }

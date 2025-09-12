@@ -1,9 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { backgroundColors, templateColors } from "~/components/Colors";
-import { pageParagraph, pageTitle } from "~/components/Style";
+import { pageParagraph, pageTitle, paragraph_1, paragraph_3, title_1 } from "~/components/Style";
 import { FaBuilding } from "react-icons/fa6";
 import { FaTruck } from "react-icons/fa";
 import Card_v3 from "~/components/Card_v3";
+import Card_v4 from "~/components/Card_v4";
+import { FiArrowRight } from "react-icons/fi";
 const cards = [
   {
     icon: FaBuilding,
@@ -29,8 +31,13 @@ const cards = [
       "Supplier sustainability scoring",
       "Last-mile delivery optimization",
     ],
-    buttonText: "Explore ABC Solutions",
+    buttonText: "Explore FLoS Solutions",
   },
+];
+const cards_2 = [
+  { title: "Industry Expertise", subtitle: "Deep understanding of sector-specific challenges and regulations" },
+  { title: "Tailored Solutions", subtitle: "Customized tools and strategies that fit your industry workflow" },
+  { title: "Proven Results", subtitle: "Track record of success across different industry verticals" },
 ];
 const sectoral_modules = () => {
   return (
@@ -74,6 +81,70 @@ const sectoral_modules = () => {
             </Grid>
           ))}
         </Grid>
+      </Box>
+      <Box>
+        <Box sx={{ paddingY: 4 }} />
+        <Box>
+          <Typography sx={{ ...title_1, fontWeight: 600, textAlign: "center" }}>
+            Why Choose Sectoral Solutions?
+          </Typography>
+        </Box>
+        <Box sx={{ paddingY: 1 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ maxWidth: 800 }}>
+            <Typography sx={{ ...paragraph_1, color: "gray", textAlign: "center" }}>
+              Every industry has unique sustainability challenges. Our sectoral approach ensures you get solutions
+              designed specifically for your industry's needs.
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={{ paddingY: 3 }} />
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+          {cards_2.map((c, i) => (
+            <Box key={i}>
+              <Card_v4 item={c} index={i} />
+            </Box>
+          ))}
+        </Box>
+        <Box sx={{ paddingY: 4 }} />
+      </Box>
+      <Box sx={{ backgroundImage: `linear-gradient(90deg, ${templateColors[0]}, ${templateColors[1]})` }}>
+        <Box sx={{ paddingY: 4 }} />
+        <Box>
+          <Typography sx={{ ...title_1, fontWeight: 600, textAlign: "center", color: "white" }}>
+            Ready to Transform Your Industry?
+          </Typography>
+        </Box>
+        <Box sx={{ paddingY: 1 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ maxWidth: 600 }}>
+            <Typography sx={{ ...paragraph_1, color: "white", textAlign: "center" }}>
+              Choose your sector and start implementing sustainability solutions designed specifically for your industry
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={{ paddingY: 1 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Button sx={{ textTransform: "none", color: "black", backgroundColor: backgroundColors[0], borderRadius: 2 }}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                justifyContent: "center",
+                alignItems: "center",
+                paddingY: 0.5,
+                paddingX: 2,
+              }}>
+              <Box>
+                <Typography sx={{ ...paragraph_3 }}>Contact Our Sector Experts</Typography>
+              </Box>
+              <Box>
+                <FiArrowRight />
+              </Box>
+            </Box>
+          </Button>
+        </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
     </Box>
   );
