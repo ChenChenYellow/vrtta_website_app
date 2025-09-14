@@ -1,7 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { FiArrowRight } from "react-icons/fi";
 import { paragraph_3 } from "./Style";
-import { templateColors } from "./Colors";
 
 type Button_v5_Props = { text: string; startColor: string; endColor: string };
 

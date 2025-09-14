@@ -1,5 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
+import Button_v5_green from "~/components/Button_v5_green";
 import Card_v1 from "~/components/Card_v1";
+import Card_v4 from "~/components/Card_v4";
+import { backgroundColors } from "~/components/Colors";
+import Heading_v1_black from "~/components/Heading_v1_black";
+import Heading_v3_green from "~/components/Heading_v3_green";
+import Heading_v4_green from "~/components/Heading_v4_green";
 import { paragraph_1, title_1 } from "~/components/Style";
 const cards = [
   {
@@ -23,34 +29,61 @@ const cards = [
     items: ["Team workshops", "Leadership training", "Change management"],
   },
 ];
+const card_2 = [
+  { title: "Assessment", subtitle: "Comprehensive analysis of your current sustainability position" },
+  { title: "Strategy", subtitle: "Custom roadmap development aligned with your business goals" },
+  { title: "Implementation", subtitle: "Guided execution with ongoing support and monitoring" },
+  { title: "Optimization", subtitle: "Continuous improvement and performance enhancement" },
+];
 const consulting_2 = () => {
   return (
     <Box>
-      <Box>
-        <Box>
-          <Typography sx={{ ...title_1, fontWeight: "600" }}>Expert Sustainability Consulting</Typography>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+        <Box sx={{ paddingY: 4 }} />
+        <Heading_v3_green
+          title={["Expert", "Sustainability", "Consulting"]}
+          subtitle="Transform your business with strategic guidance from our team of sustainability experts. Drive measurable impact while achieving your business objectives."
+        />
+        <Box sx={{ paddingY: 2 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Button_v5_green text="Schedule Consultation" />
         </Box>
-        <Box>
-          <Typography sx={{ ...paragraph_1 }}>
-            Transform your business with strategic guidance from our team of sustainability experts. Drive measurable
-            impact while achieving your business objectives.
-          </Typography>
-        </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box>
+
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+        <Box sx={{ paddingY: 1 }} />
+        <Heading_v1_black
+          title="Our Consulting Services"
+          subtitle="Comprehensive solutions tailored to your unique sustainability challenges"
+        />
+        <Box sx={{ paddingY: 4 }} />
         <Box>
-          <Typography>Our Consulting Services</Typography>
+          <Grid container spacing={2} sx={{ paddingX: 2 }}>
+            {cards.map((c, i) => (
+              <Grid key={i} size={6}>
+                <Card_v1 title={c.title} subtitle={c.subtitle} items={c.items} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
-        <Box>
-          <Typography>Comprehensive solutions tailored to your unique sustainability challenges</Typography>
+
+        <Box sx={{ paddingY: 4 }} />
+        <Heading_v1_black
+          title="Our Proven Process"
+          subtitle="A systematic approach to delivering sustainable transformation"
+        />
+        <Box sx={{ paddingY: 4 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid container sx={{ maxWidth: 1600 }}>
+            {card_2.map((c, i) => (
+              <Grid key={i} size={3}>
+                <Card_v4 item={c} index={i} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
-        <Grid>
-          {cards.map((c, i) => (
-            <Grid key={i}>
-              <Card_v1 title={c.title} subtitle={c.subtitle} items={c.items} />
-            </Grid>
-          ))}
-        </Grid>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
     </Box>
   );
