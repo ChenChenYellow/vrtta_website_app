@@ -7,17 +7,17 @@ import { LuBuilding } from "react-icons/lu";
 import { LuLeaf } from "react-icons/lu";
 import { RxLightningBolt } from "react-icons/rx";
 import { LuRecycle } from "react-icons/lu";
-import Heading_v1 from "~/components/Heading_v1";
+import Heading_v1_black from "~/components/Heading_v1_black";
 import Card_v6 from "~/components/Card_v6";
-import Card_v7 from "~/components/Card_v7";
+import Card_v7_green from "~/components/Card_v7_green";
 import Heading_v2 from "~/components/Heading_v2";
 import { LuHammer } from "react-icons/lu";
 import { FiAward } from "react-icons/fi";
-import Card_v8 from "~/components/Card_v8";
+import Card_v8_green from "~/components/Card_v8_green";
 import Button_v1 from "~/components/Button_v1";
-import Heading_v3 from "~/components/Heading_v3";
+import Heading_v4_green from "~/components/Heading_v4_green";
 import type { subtle } from "crypto";
-import Button_v3 from "~/components/Button_v3";
+import Button_v5_green from "~/components/Button_v5_green";
 import Button_v4 from "~/components/Button_v4";
 const cards = [
   {
@@ -104,7 +104,7 @@ const abc = () => {
   return (
     <Box>
       <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Heading_v3
+        <Heading_v4_green
           title={["Build a", "Sustainable", "Future"]}
           subtitle="Transform the built environment with comprehensive sustainability solutions for architecture, building
               products, and construction. From design to occupancy, we help you create buildings that benefit both
@@ -114,7 +114,7 @@ const abc = () => {
         <Box sx={{ paddingY: 2 }} />
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
           <Box>
-            <Button_v3 text="Start Your Project" />
+            <Button_v5_green text="Start Your Project" />
           </Box>
           <Box>
             <Button_v4 text="Download Case Studies" />
@@ -123,7 +123,7 @@ const abc = () => {
         <Box sx={{ paddingY: 4 }} />
       </Box>
       <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Heading_v1
+        <Heading_v1_black
           title="Comprehensive Building Solutions"
           subtitle="End-to-end sustainability services for every phase of your building project"
         />
@@ -137,7 +137,7 @@ const abc = () => {
           ))}
         </Grid>
         <Box sx={{ paddingY: 2 }} />
-        <Heading_v1
+        <Heading_v1_black
           title="Recognized Certifications"
           subtitle="We help you achieve the industry's most respected green building certifications"
         />
@@ -153,9 +153,10 @@ const abc = () => {
         </Box>
         <Box sx={{ paddingY: 2 }} />
       </Box>
-      <Box>
+
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
         <Box sx={{ paddingY: 1 }} />
-        <Heading_v1
+        <Heading_v1_black
           title="Success Stories"
           subtitle="Real projects, real results. See how we've helped transform buildings across different sectors."
         />
@@ -163,12 +164,10 @@ const abc = () => {
         <Grid container spacing={2} sx={{ paddingX: 2 }}>
           {cards_3.map((c, i) => (
             <Grid key={i} size={4}>
-              <Card_v7 item={c} />
+              <Card_v7_green item={c} />
             </Grid>
           ))}
         </Grid>
-      </Box>
-      <Box>
         <Grid container>
           <Grid size={6} sx={{ padding: 2 }}>
             <Heading_v2
@@ -179,7 +178,7 @@ const abc = () => {
             <Box>
               {cards_4.map((c, i) => (
                 <Box key={i}>
-                  <Card_v8 item={c} />
+                  <Card_v8_green item={c} />
                 </Box>
               ))}
             </Box>

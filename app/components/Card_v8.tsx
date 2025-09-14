@@ -6,18 +6,21 @@ import { FaLeaf } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
 import type { IconType } from "react-icons";
-type Card_v8_Props = { item: { title: string; subtitle: string; icon: IconType } };
+type Card_v8_Props = {
+  item: { title: string; subtitle: string; icon: IconType };
+  color: { start: string; end: string };
+};
 
-const Card_v8: React.FC<Card_v8_Props> = ({ item }) => {
+const Card_v8: React.FC<Card_v8_Props> = ({ item, color }) => {
   return (
-    <Paper sx={{ padding: 2, height: 1 }} elevation={0}>
+    <Paper sx={{ padding: 2, height: 1, backgroundColor: "transparent" }} elevation={0}>
       <Box sx={{ display: "flex", gap: 2 }}>
         <Box>
           <Box
             sx={{
               padding: 1,
               borderRadius: 3,
-              backgroundImage: `linear-gradient(150deg, ${templateColors[0]}, ${templateColors[1]})`,
+              backgroundImage: `linear-gradient(150deg, ${color.start}, ${color.end})`,
             }}>
             <item.icon size={20} color="white" />
           </Box>

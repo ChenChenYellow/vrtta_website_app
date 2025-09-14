@@ -1,15 +1,25 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Button_v4 from "~/components/Button_v4";
-import Button_v6 from "~/components/Button_v6";
-import { backgroundColors } from "~/components/Colors";
-import Heading_v1 from "~/components/Heading_v1";
-import Heading_v5 from "~/components/Heading_v5";
+import Button_v5_blue from "~/components/Button_v5_blue";
+import { backgroundColors, templateColors } from "~/components/Colors";
+import Heading_v1_black from "~/components/Heading_v1_black";
+import Heading_v4_blue from "~/components/Heading_v4_blue";
 import { LuRoute } from "react-icons/lu";
 import { LuPackage } from "react-icons/lu";
 import { LuTruck } from "react-icons/lu";
 import { LuEarth } from "react-icons/lu";
 import Card_v5_blue from "~/components/Card_v5_blue";
 import Card_v9 from "~/components/Card_v9";
+import Card_v7_blue from "~/components/Card_v7_blue";
+import { paragraph_2, paragraph_3, title_2 } from "~/components/Style";
+import Card_v8_blue from "~/components/Card_v8_blue";
+import Heading_v2 from "~/components/Heading_v2";
+import Button_v1 from "~/components/Button_v1";
+import { RiSpeedUpFill } from "react-icons/ri";
+import { GrLocation } from "react-icons/gr";
+import { LuCircleCheckBig } from "react-icons/lu";
+import Heading_v1_white from "~/components/Heading_v1_white";
+import Button_v2 from "~/components/Button_v2";
 const cards = [
   {
     title: "Route Optimization",
@@ -57,11 +67,60 @@ const cards_2 = [
   { title: "Visibility Increase", subtitle: "Improvement in supply chain transparency", stats: "60%" },
   { title: "Cost Savings", subtitle: "Operational cost reduction", stats: "30%" },
 ];
+const cards_3 = [
+  {
+    title: "Global Retailer Transformation",
+    subtitle: "Reduced logistics emissions by 45% while improving delivery times",
+    tag: "Retail",
+    items: ["45% emission reduction", "15% faster deliveries", "$2M annual savings"],
+  },
+
+  {
+    title: "Manufacturing Supply Chain",
+    subtitle: "Optimized supplier network reducing carbon footprint by 50%",
+    tag: "Manufacturing",
+    items: ["50% carbon reduction", "20% cost savings", "99.5% on-time delivery"],
+  },
+
+  {
+    title: "Food Distribution Network",
+    subtitle: "Sustainable cold chain management with zero food waste goals",
+    tag: "Food & Beverage",
+    items: ["85% waste reduction", "30% energy savings", "Carbon neutral delivery"],
+  },
+];
+const cards_4 = [
+  {
+    title: "AI Route Planning",
+    subtitle: "Machine learning algorithms for optimal route calculation",
+    icon: RiSpeedUpFill,
+  },
+  {
+    title: "IoT Fleet Tracking",
+    subtitle: "Real-time monitoring of vehicle performance and location",
+    icon: RiSpeedUpFill,
+  },
+  {
+    title: "Blockchain Traceability",
+    subtitle: "Immutable supply chain records for transparency",
+    icon: RiSpeedUpFill,
+  },
+  {
+    title: "Carbon Analytics",
+    subtitle: "Comprehensive emissions tracking and reporting",
+    icon: RiSpeedUpFill,
+  },
+];
+const cards_5 = [
+  "Multi-currency and language support",
+  "Local regulation compliance",
+  "Regional sustainability standards",
+];
 const flos = () => {
   return (
     <Box>
       <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Heading_v5
+        <Heading_v4_blue
           title={["Optimize Your", "Supply Chain"]}
           subtitle="Transform your freight, logistics, and supply chain operations with sustainable solutions that reduce environmental impact while improving efficiency and reducing costs."
           tag="Freight, Logistics & Supply Chain"
@@ -69,15 +128,16 @@ const flos = () => {
         <Box sx={{ paddingY: 2 }} />
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
           <Box>
-            <Button_v6 text="Optimize Your Fleet" />
+            <Button_v5_blue text="Optimize Your Fleet" />
           </Box>
           <Box>
             <Button_v4 text="Calculate Savings" />
           </Box>
         </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
       <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Heading_v1
+        <Heading_v1_black
           title="Complete Logistics Solutions"
           subtitle="Comprehensive tools and strategies to make your supply chain more sustainable and efficient"
         />
@@ -90,7 +150,7 @@ const flos = () => {
           ))}
         </Grid>
         <Box sx={{ paddingY: 2 }} />
-        <Heading_v1
+        <Heading_v1_black
           title="Proven Impact"
           subtitle="Our solutions deliver measurable results across key performance indicators"
         />
@@ -108,10 +168,92 @@ const flos = () => {
       </Box>
 
       <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Heading_v1
+        <Heading_v1_black
           title="Customer Success Stories"
           subtitle="See how leading companies have transformed their supply chains with our solutions"
         />
+        <Box sx={{ paddingY: 2 }} />
+        <Grid container spacing={2} sx={{ paddingX: 2 }}>
+          {cards_3.map((c, i) => (
+            <Grid key={i} size={4}>
+              <Card_v7_blue item={c} />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container>
+          <Grid size={6} sx={{ padding: 2 }}>
+            <Heading_v2
+              title="Advanced Technology Stack"
+              subtitle="Leverage cutting-edge technologies to optimize every aspect of your supply chain operations, from planning to execution."
+            />
+            <Box sx={{ paddingY: 1 }} />
+            <Box>
+              {cards_4.map((c, i) => (
+                <Box key={i}>
+                  <Card_v8_blue item={c} />
+                </Box>
+              ))}
+            </Box>
+          </Grid>
+          <Grid
+            size={6}
+            sx={{
+              padding: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
+            <Box sx={{ backgroundColor: templateColors[2], padding: 4, borderRadius: 3 }}>
+              <Box>
+                <GrLocation color="white" size={44} />
+              </Box>
+              <Box sx={{ paddingY: 1 }} />
+              <Box>
+                <Typography sx={{ ...title_2, fontWeight: 600, color: "white" }}>Global Reach, Local Impact</Typography>
+              </Box>
+              <Box sx={{ paddingY: 1 }} />
+              <Box>
+                <Typography sx={{ ...paragraph_2, color: "white" }}>
+                  Our platform supports operations across 150+ countries, helping you optimize logistics while meeting
+                  local sustainability requirements.
+                </Typography>
+              </Box>
+              <Box sx={{ paddingY: 1 }} />
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {cards_5.map((c, i) => (
+                  <Box
+                    key={i}
+                    sx={{ color: "white", display: "flex", gap: 2, justifyContent: "left", alignItems: "center" }}>
+                    <Box>
+                      <LuCircleCheckBig size={20} />
+                    </Box>
+                    <Box>
+                      <Typography sx={{ ...paragraph_3 }}>{c}</Typography>
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box sx={{ paddingY: 1 }} />
+              <Box>
+                <Button_v1 text="Schedule Consulation" />
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box sx={{ backgroundColor: templateColors[2] }}>
+        <Heading_v1_white
+          title="Transform Your Supply Chain Today"
+          subtitle="Join industry leaders who are already reducing costs and environmental impact with our solutions"
+        />
+        <Box sx={{ paddingY: 2 }} />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box>
+            <Button_v1 text="Request Demo" />
+          </Box>
+        </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
     </Box>
   );
