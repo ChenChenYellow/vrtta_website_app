@@ -41,7 +41,7 @@ const NavItemMobile: React.FC<NavItem_Props> = ({ item, color }) => {
           textTransform: "none",
           justifyContent: "left",
         }}>
-        <Typography sx={{ ml: 0.4, fontFamily: "Segoe UI", fontSize: "0.85rem" }}>{item.title}</Typography>
+        <Typography sx={{ ml: 0.4, fontSize: "0.85rem" }}>{item.title}</Typography>
       </Button>
       <LinearProgress
         variant="determinate"
