@@ -1,12 +1,6 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
-import { LuCircleCheckBig } from "react-icons/lu";
-import { hexToRgba, primaryColors, templateColors } from "./Colors";
-import type { IconType } from "react-icons";
-import { paragraph_1, paragraph_2, paragraph_3, title_1, title_2 } from "./Style";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
-import { GoDotFill } from "react-icons/go";
+import { Box, Typography } from "@mui/material";
+import { templateColors } from "./Colors";
+import { paragraph_2, title_1, title_2 } from "./Style";
 type Card_v9_Props = { item: { title: string; subtitle: string; stats: string } };
 
 const Card_v9: React.FC<Card_v9_Props> = ({ item }) => {
@@ -14,7 +8,16 @@ const Card_v9: React.FC<Card_v9_Props> = ({ item }) => {
     <Box sx={{ maxWidth: 300 }}>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box>
-          <Typography sx={{ ...title_1, fontWeight: 600, color: templateColors[2] }}>{item.stats}</Typography>
+          <Typography
+            sx={{
+              ...title_1,
+              fontWeight: 600,
+              backgroundImage: `linear-gradient(90deg, ${templateColors[2]}, ${templateColors[3]})`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}>
+            {item.stats}
+          </Typography>
         </Box>
       </Box>
       <Box sx={{ paddingY: 1 }} />

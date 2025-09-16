@@ -1,20 +1,14 @@
-import { Box, Typography } from "@mui/material";
-import { pageParagraph, pageTitle, paragraph_1, paragraph_3, title_1 } from "./Style";
-import { hexToRgba, primaryColors, templateColors } from "./Colors";
+import { templateColors } from "./Colors";
 import Heading_v4 from "./Heading_v4";
 
-type Heading_v4_green_props = { title: string[]; subtitle: string; tag: string };
-const Heading_v4_green: React.FC<Heading_v4_green_props> = (p) => {
-  return (
-    <Heading_v4
-      title={p.title}
-      subtitle={p.subtitle}
-      tag={p.tag}
-      startColor={templateColors[0]}
-      endColor={templateColors[1]}
-      tagBackgroundColor={templateColors[1]}
-      tagColor={primaryColors[0]}
-    />
-  );
+type Heading_v4_green_props = { content: { title: string[]; subtitle: string; tag: string } };
+const color = {
+  start: templateColors[0],
+  end: templateColors[1],
+  tag: templateColors[1],
+  tagBackground: templateColors[0],
 };
+const Heading_v4_green: React.FC<Heading_v4_green_props> = ({ content }) => (
+  <Heading_v4 content={content} color={color} />
+);
 export default Heading_v4_green;

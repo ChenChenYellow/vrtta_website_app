@@ -14,7 +14,7 @@ type Heading_v3_props = {
 const Heading_v3: React.FC<Heading_v3_props> = ({ content, color }) => {
   return (
     <Box>
-      <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
         {content.title.map((t, i) => (
           <Box key={i}>
             <Typography
@@ -31,7 +31,7 @@ const Heading_v3: React.FC<Heading_v3_props> = ({ content, color }) => {
                       WebkitTextFillColor: "transparent",
                     }),
               }}>
-              {t}
+              {t}&nbsp;
             </Typography>
           </Box>
         ))}

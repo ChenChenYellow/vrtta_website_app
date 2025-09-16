@@ -1,34 +1,38 @@
 import { Box, Typography } from "@mui/material";
-import { pageParagraph, pageTitle, paragraph_1, paragraph_3, title_1 } from "./Style";
-import { hexToRgba, primaryColors, templateColors } from "./Colors";
+import { hexToRgba } from "./Colors";
+import { pageParagraph, pageTitle, paragraph_3 } from "./Style";
 
 type Heading_v4_props = {
-  title: string[];
-  subtitle: string;
-  tag: string;
-  startColor: string;
-  endColor: string;
-  tagColor: string;
-  tagBackgroundColor: string;
+  content: {
+    title: string[];
+    subtitle: string;
+    tag: string;
+  };
+  color: {
+    start: string;
+    end: string;
+    tag: string;
+    tagBackground: string;
+  };
 };
-const Heading_v4: React.FC<Heading_v4_props> = (p) => {
+const Heading_v4: React.FC<Heading_v4_props> = ({ content, color }) => {
   return (
     <Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
-            backgroundColor: hexToRgba(p.tagBackgroundColor, 0.2),
+            backgroundColor: hexToRgba(color.tagBackground, 0.2),
             paddingX: 2,
             height: 24,
             borderRadius: 12,
             display: "flex",
             alignItems: "center",
           }}>
-          <Typography sx={{ ...paragraph_3, color: p.tagColor }}>{p.tag}</Typography>
+          <Typography sx={{ ...paragraph_3, color: color.tag }}>{content.tag}</Typography>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
-        {p.title.map((t, i) => (
+      <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+        {content.title.map((t, i) => (
           <Box key={i}>
             <Typography
               sx={{
@@ -39,19 +43,20 @@ const Heading_v4: React.FC<Heading_v4_props> = (p) => {
                       color: "black",
                     }
                   : {
-                      backgroundImage: `linear-gradient(90deg, ${p.startColor}, ${p.endColor})`,
+                      backgroundImage: `linear-gradient(90deg, ${color.start}, ${color.end})`,
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }),
+                textWrap: "wrap",
               }}>
-              {t}
+              {t}&nbsp;
             </Typography>
           </Box>
         ))}
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box sx={{ maxWidth: 1000 }}>
-          <Typography sx={{ ...pageParagraph, textAlign: "center", color: "gray" }}>{p.subtitle}</Typography>
+          <Typography sx={{ ...pageParagraph, textAlign: "center", color: "gray" }}>{content.subtitle}</Typography>
         </Box>
       </Box>
     </Box>

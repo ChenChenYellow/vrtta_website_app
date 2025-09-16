@@ -1,13 +1,8 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
-import { FiAward } from "react-icons/fi";
-import { hexToRgba, templateColors } from "./Colors";
-import { paragraph_2, paragraph_3, title_2 } from "./Style";
-import { FaLeaf } from "react-icons/fa6";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { FiArrowRight } from "react-icons/fi";
-import Button_v1 from "./Button_v1";
-import Button_v2 from "./Button_v2";
+import { Box, Paper, Typography } from "@mui/material";
 import type { IconType } from "react-icons";
+import Button_v2 from "./Button_v2";
+import { hexToRgba } from "./Colors";
+import { paragraph_2, paragraph_3, title_2 } from "./Style";
 type Card_v7_Props = {
   item: { title: string; subtitle: string; tag: string; items: string[] };
   color: { tag: string; tagBackground: string; icon: string };

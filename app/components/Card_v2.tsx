@@ -1,11 +1,8 @@
 import { Box, Paper, Typography } from "@mui/material";
-import { LuCircleCheckBig } from "react-icons/lu";
-import { primaryColors, templateColors } from "./Colors";
 import type { IconType } from "react-icons";
-import { paragraph_2, paragraph_3, title_2 } from "./Style";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
+import { templateColors } from "./Colors";
+import { paragraph_2, paragraph_3, title_2 } from "./Style";
 type Card_v2_Props = { title: string; subtitle: string; icon: IconType };
 
 const Card_v2: React.FC<Card_v2_Props> = ({ title, subtitle, icon: Icon }) => {

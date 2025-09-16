@@ -12,6 +12,7 @@ const Button_v5: React.FC<Button_v5_Props> = (p) => {
         color: "white",
         backgroundImage: `linear-gradient(90deg, ${p.startColor}, ${p.endColor})`,
         borderRadius: 3,
+        width: 1,
       }}>
       <Box
         sx={{

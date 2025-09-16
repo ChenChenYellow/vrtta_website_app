@@ -3,14 +3,14 @@ import { LuBuilding, LuChartColumn, LuCloud, LuLock, LuShield } from "react-icon
 import { RiGlobalLine } from "react-icons/ri";
 import { RxLightningBolt } from "react-icons/rx";
 import Button_v4 from "~/components/Button_v4";
-import Button_v5_green from "~/components/Button_v5_green";
-import Card_v10_green from "~/components/Card_v10_green";
-import Card_v5_green from "~/components/Card_v5_green";
-import Card_v8_green from "~/components/Card_v8_green";
+import Button_v5_blue from "~/components/Button_v5_blue";
+import Card_v10_blue from "~/components/Card_v10_blue";
+import Card_v5_blue from "~/components/Card_v5_blue";
+import Card_v8_blue from "~/components/Card_v8_blue";
 import { backgroundColors } from "~/components/Colors";
 import Heading_v1_black from "~/components/Heading_v1_black";
 import Heading_v2 from "~/components/Heading_v2";
-import Heading_v4_green from "~/components/Heading_v4_green";
+import Heading_v4_blue from "~/components/Heading_v4_blue";
 import { paragraph_2, title_2 } from "~/components/Style";
 const cards = [
   {
@@ -71,9 +71,9 @@ const cards_4 = [
 const platform = () => {
   return (
     <Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Box sx={{ paddingY: 4 }} />
-        <Heading_v4_green
+        <Heading_v4_blue
           content={{
             title: ["The Complete", "Sustainability", "Platform"],
             subtitle:
@@ -84,7 +84,7 @@ const platform = () => {
         <Box sx={{ paddingY: 2 }} />
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
           <Box>
-            <Button_v5_green text="Start Free Trial" />
+            <Button_v5_blue text="Start Free Trial" />
           </Box>
           <Box>
             <Button_v4 text="Schedule Demo" />
@@ -92,22 +92,23 @@ const platform = () => {
         </Box>
         <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Box sx={{ paddingY: 2 }} />
         <Heading_v1_black
           title="Powerful Features"
           subtitle="Everything you need to manage and optimize your sustainability initiatives"
         />
-        <Box sx={{ paddingY: 2 }} />
+        <Box sx={{ paddingY: 4 }} />
         <Box sx={{ paddingX: 2 }}>
           <Grid container spacing={2}>
             {cards.map((c, i) => (
               <Grid key={i} size={{ sm: 12, md: 6, lg: 3 }}>
-                <Card_v5_green item={c} />
+                <Card_v5_blue item={c} />
               </Grid>
             ))}
           </Grid>
         </Box>
+        <Box sx={{ paddingY: 4 }} />
         <Heading_v1_black
           title="Measurable Results"
           subtitle="Our platform delivers tangible outcomes for organizations worldwide"
@@ -117,14 +118,14 @@ const platform = () => {
           <Grid container spacing={2}>
             {cards_2.map((c, i) => (
               <Grid key={i} size={{ xs: 12, sm: 4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                <Card_v10_green item={c} />
+                <Card_v10_blue item={c} />
               </Grid>
             ))}
           </Grid>
         </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Box sx={{ paddingY: 2 }} />
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Grid container sx={{}}>
           <Grid size={{ sm: 12, md: 6 }}>
             <Box sx={{ paddingX: 2 }}>
@@ -137,7 +138,7 @@ const platform = () => {
             <Box>
               {cards_3.map((c, i) => (
                 <Box key={i}>
-                  <Card_v8_green item={c} />
+                  <Card_v8_blue item={c} />
                 </Box>
               ))}
             </Box>
@@ -170,6 +171,7 @@ const platform = () => {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
     </Box>
   );

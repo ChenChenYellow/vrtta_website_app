@@ -1,25 +1,20 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { GrLocation } from "react-icons/gr";
+import { LuCircleCheckBig, LuEarth, LuPackage, LuRoute, LuTruck } from "react-icons/lu";
+import { RiSpeedUpFill } from "react-icons/ri";
+import Button_v1 from "~/components/Button_v1";
 import Button_v4 from "~/components/Button_v4";
 import Button_v5_blue from "~/components/Button_v5_blue";
+import Card_v5_blue from "~/components/Card_v5_blue";
+import Card_v7_blue from "~/components/Card_v7_blue";
+import Card_v8_blue from "~/components/Card_v8_blue";
+import Card_v9 from "~/components/Card_v9";
 import { backgroundColors, templateColors } from "~/components/Colors";
 import Heading_v1_black from "~/components/Heading_v1_black";
-import Heading_v4_blue from "~/components/Heading_v4_blue";
-import { LuRoute } from "react-icons/lu";
-import { LuPackage } from "react-icons/lu";
-import { LuTruck } from "react-icons/lu";
-import { LuEarth } from "react-icons/lu";
-import Card_v5_blue from "~/components/Card_v5_blue";
-import Card_v9 from "~/components/Card_v9";
-import Card_v7_blue from "~/components/Card_v7_blue";
-import { paragraph_2, paragraph_3, title_2 } from "~/components/Style";
-import Card_v8_blue from "~/components/Card_v8_blue";
-import Heading_v2 from "~/components/Heading_v2";
-import Button_v1 from "~/components/Button_v1";
-import { RiSpeedUpFill } from "react-icons/ri";
-import { GrLocation } from "react-icons/gr";
-import { LuCircleCheckBig } from "react-icons/lu";
 import Heading_v1_white from "~/components/Heading_v1_white";
-import Button_v2 from "~/components/Button_v2";
+import Heading_v2 from "~/components/Heading_v2";
+import Heading_v4_blue from "~/components/Heading_v4_blue";
+import { paragraph_2, paragraph_3, title_2 } from "~/components/Style";
 const cards = [
   {
     title: "Route Optimization",
@@ -116,17 +111,21 @@ const cards_5 = [
   "Local regulation compliance",
   "Regional sustainability standards",
 ];
-const flos = () => {
+const home = () => {
   return (
     <Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
+        <Box sx={{ paddingY: 4 }} />
         <Heading_v4_blue
-          title={["Optimize Your", "Supply Chain"]}
-          subtitle="Transform your freight, logistics, and supply chain operations with sustainable solutions that reduce environmental impact while improving efficiency and reducing costs."
-          tag="Freight, Logistics & Supply Chain"
+          content={{
+            title: ["Optimize Your", "Supply Chain"],
+            subtitle:
+              "Transform your freight, logistics, and supply chain operations with sustainable solutions that reduce environmental impact while improving efficiency and reducing costs.",
+            tag: "Freight, Logistics & Supply Chain",
+          }}
         />
         <Box sx={{ paddingY: 2 }} />
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
           <Box>
             <Button_v5_blue text="Optimize Your Fleet" />
           </Box>
@@ -136,7 +135,7 @@ const flos = () => {
         </Box>
         <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Heading_v1_black
           title="Complete Logistics Solutions"
           subtitle="Comprehensive tools and strategies to make your supply chain more sustainable and efficient"
@@ -144,7 +143,7 @@ const flos = () => {
         <Box sx={{ paddingY: 4 }} />
         <Grid container spacing={2} sx={{ paddingX: 2 }}>
           {cards.map((c, i) => (
-            <Grid key={i} size={6}>
+            <Grid key={i} size={{ xs: 12, sm: 12, md: 6, lg: 3, xl: 3 }}>
               <Card_v5_blue item={c} />
             </Grid>
           ))}
@@ -156,9 +155,12 @@ const flos = () => {
         />
         <Box sx={{ paddingY: 2 }} />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Grid container>
+          <Grid container spacing={2}>
             {cards_2.map((c, i) => (
-              <Grid key={i} size={3}>
+              <Grid
+                key={i}
+                size={{ xs: 12, sm: 6, md: 3, lg: 3, xl: 3 }}
+                sx={{ display: "flex", justifyContent: "center" }}>
                 <Card_v9 item={c} />
               </Grid>
             ))}
@@ -166,8 +168,7 @@ const flos = () => {
         </Box>
         <Box sx={{ paddingY: 2 }} />
       </Box>
-
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Heading_v1_black
           title="Customer Success Stories"
           subtitle="See how leading companies have transformed their supply chains with our solutions"
@@ -175,13 +176,13 @@ const flos = () => {
         <Box sx={{ paddingY: 2 }} />
         <Grid container spacing={2} sx={{ paddingX: 2 }}>
           {cards_3.map((c, i) => (
-            <Grid key={i} size={4}>
+            <Grid key={i} size={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 4 }}>
               <Card_v7_blue item={c} />
             </Grid>
           ))}
         </Grid>
         <Grid container>
-          <Grid size={6} sx={{ padding: 2 }}>
+          <Grid size={{ sm: 12, md: 6 }} sx={{ padding: 2 }}>
             <Heading_v2
               title="Advanced Technology Stack"
               subtitle="Leverage cutting-edge technologies to optimize every aspect of your supply chain operations, from planning to execution."
@@ -196,14 +197,19 @@ const flos = () => {
             </Box>
           </Grid>
           <Grid
-            size={6}
+            size={{ sm: 12, md: 6 }}
             sx={{
               padding: 2,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}>
-            <Box sx={{ backgroundColor: templateColors[2], padding: 4, borderRadius: 3 }}>
+            <Box
+              sx={{
+                backgroundImage: `linear-gradient(135deg, ${templateColors[3]}, ${templateColors[2]})`,
+                padding: 4,
+                borderRadius: 3,
+              }}>
               <Box>
                 <GrLocation color="white" size={44} />
               </Box>
@@ -241,8 +247,7 @@ const flos = () => {
           </Grid>
         </Grid>
       </Box>
-
-      <Box sx={{ backgroundColor: templateColors[2] }}>
+      <Box sx={{ backgroundImage: `linear-gradient(90deg, ${templateColors[3]}, ${templateColors[2]})`, paddingX: 2 }}>
         <Heading_v1_white
           title="Transform Your Supply Chain Today"
           subtitle="Join industry leaders who are already reducing costs and environmental impact with our solutions"
@@ -258,4 +263,4 @@ const flos = () => {
     </Box>
   );
 };
-export default flos;
+export default home;

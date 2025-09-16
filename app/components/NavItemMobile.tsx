@@ -1,28 +1,15 @@
-import { Box, Button, LinearProgress, Paper, Popper, Typography } from "@mui/material";
+import { Box, Button, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { hexToRgba } from "./Colors";
-import NavItemMobile from "./NavItemMobile";
-type NavItemBase = {
-  title: string;
-  href: string;
-};
-
-type NavItemWithChildren = {
-  title: string;
-  href: string;
-  items: NavItemBase[];
-};
-
-export type NavItem = NavItemBase | NavItemWithChildren;
+import type { NavItem } from "./NavItem";
 type NavItem_Props = {
   item: NavItem;
   color: { primary: string; secondary: string };
 };
 
-const NavItem: React.FC<NavItem_Props> = ({ item, color }) => {
+const NavItemMobile: React.FC<NavItem_Props> = ({ item, color }) => {
   const [progress, setProgress] = useState(0);
-  const [popperVisible, setPopperVisible] = useState(false);
   const anchorRef = useRef(null);
   const location = useLocation();
   useEffect(() => {
@@ -32,10 +19,8 @@ const NavItem: React.FC<NavItem_Props> = ({ item, color }) => {
     <Box
       onMouseEnter={() => {
         setProgress(100);
-        setPopperVisible(true);
       }}
       onMouseLeave={() => {
-        setPopperVisible(false);
         setProgress(0);
       }}
       sx={{}}>
@@ -53,10 +38,10 @@ const NavItem: React.FC<NavItem_Props> = ({ item, color }) => {
           },
           borderRadius: 0,
           width: 1,
+          textTransform: "none",
+          justifyContent: "left",
         }}>
-        <Typography sx={{ textTransform: "none", ml: 0.4, fontFamily: "Segoe UI", fontSize: "0.85rem" }}>
-          {item.title}
-        </Typography>
+        <Typography sx={{ ml: 0.4, fontFamily: "Segoe UI", fontSize: "0.85rem" }}>{item.title}</Typography>
       </Button>
       <LinearProgress
         variant="determinate"
@@ -70,25 +55,16 @@ const NavItem: React.FC<NavItem_Props> = ({ item, color }) => {
           },
         }}
       />
-      <Popper open={popperVisible} anchorEl={anchorRef.current} placement="bottom-start" disablePortal>
-        {"items" in item && (
-          <Paper
-            sx={{
-              mt: 1,
-              minWidth: 160,
-              borderRadius: 1,
-            }}>
-            <Box sx={{ paddingY: 1 }}>
-              {item.items.map((subItem, idx) => (
-                <Box key={idx}>
-                  <NavItemMobile item={subItem} color={color} />
-                </Box>
-              ))}
+      {"items" in item && (
+        <Box sx={{}}>
+          {item.items.map((subItem, idx) => (
+            <Box key={idx} sx={{ marginLeft: 1 }}>
+              <NavItemMobile item={subItem} color={color} />
             </Box>
-          </Paper>
-        )}
-      </Popper>
+          ))}
+        </Box>
+      )}
     </Box>
   );
 };
-export default NavItem;
+export default NavItemMobile;

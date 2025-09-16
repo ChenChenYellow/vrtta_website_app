@@ -71,7 +71,7 @@ const cards_4 = [
 const platform = () => {
   return (
     <Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Box sx={{ paddingY: 4 }} />
         <Heading_v4_green
           content={{
@@ -92,13 +92,13 @@ const platform = () => {
         </Box>
         <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Box sx={{ paddingY: 2 }} />
         <Heading_v1_black
           title="Powerful Features"
           subtitle="Everything you need to manage and optimize your sustainability initiatives"
         />
-        <Box sx={{ paddingY: 2 }} />
+        <Box sx={{ paddingY: 4 }} />
         <Box sx={{ paddingX: 2 }}>
           <Grid container spacing={2}>
             {cards.map((c, i) => (
@@ -108,6 +108,7 @@ const platform = () => {
             ))}
           </Grid>
         </Box>
+        <Box sx={{ paddingY: 4 }} />
         <Heading_v1_black
           title="Measurable Results"
           subtitle="Our platform delivers tangible outcomes for organizations worldwide"
@@ -122,9 +123,9 @@ const platform = () => {
             ))}
           </Grid>
         </Box>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
-        <Box sx={{ paddingY: 2 }} />
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Grid container sx={{}}>
           <Grid size={{ sm: 12, md: 6 }}>
             <Box sx={{ paddingX: 2 }}>
@@ -170,6 +171,7 @@ const platform = () => {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{ paddingY: 4 }} />
       </Box>
     </Box>
   );

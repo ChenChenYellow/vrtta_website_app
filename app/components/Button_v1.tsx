@@ -20,7 +20,7 @@ const Button_v1: React.FC<Button_v1_Props> = ({ text }) => {
       }}>
       <Box sx={{ display: "flex", gap: 2, justifyContent: "center", alignItems: "center" }}>
         <Box>
-          <Typography sx={{ ...paragraph_3, fontWeight: 600 }}>{text}</Typography>
+          <Typography sx={{ ...paragraph_3 }}>{text}</Typography>
         </Box>
         <Box>
           <FiArrowRight size={16} />

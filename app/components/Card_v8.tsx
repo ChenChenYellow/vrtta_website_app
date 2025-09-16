@@ -1,11 +1,6 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
-import { FiAward } from "react-icons/fi";
-import { hexToRgba, templateColors } from "./Colors";
-import { paragraph_2, paragraph_3, title_2 } from "./Style";
-import { FaLeaf } from "react-icons/fa6";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { FiArrowRight } from "react-icons/fi";
+import { Box, Paper, Typography } from "@mui/material";
 import type { IconType } from "react-icons";
+import { paragraph_2, paragraph_3 } from "./Style";
 type Card_v8_Props = {
   item: { title: string; subtitle: string; icon: IconType };
   color: { start: string; end: string };

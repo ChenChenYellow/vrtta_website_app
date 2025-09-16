@@ -1,11 +1,14 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import { backgroundColors, templateColors } from "~/components/Colors";
-import { pageParagraph, pageTitle, paragraph_1, paragraph_3, title_1 } from "~/components/Style";
-import { FaBuilding } from "react-icons/fa6";
+import { Box, Grid } from "@mui/material";
 import { FaTruck } from "react-icons/fa";
-import Card_v3 from "~/components/Card_v3";
+import { FaBuilding } from "react-icons/fa6";
+import Button_v1 from "~/components/Button_v1";
+import Card_v3_blue from "~/components/Card_v3_blue";
+import Card_v3_green from "~/components/Card_v3_green";
 import Card_v4 from "~/components/Card_v4";
-import { FiArrowRight } from "react-icons/fi";
+import { backgroundColors, templateColors } from "~/components/Colors";
+import Heading_v1_black from "~/components/Heading_v1_black";
+import Heading_v1_white from "~/components/Heading_v1_white";
+import Heading_v3_green from "~/components/Heading_v3_green";
 const cards = [
   {
     icon: FaBuilding,
@@ -42,64 +45,33 @@ const cards_2 = [
 const sectoral_modules = () => {
   return (
     <Box>
-      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
         <Box sx={{ paddingY: 4 }} />
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-          <Box>
-            <Typography sx={{ ...pageTitle, fontWeight: 600 }}>Sectoral</Typography>
-          </Box>
-          <Box>
-            <Typography
-              sx={{
-                ...pageTitle,
-                fontWeight: 600,
-                backgroundImage: `linear-gradient(90deg, ${templateColors[0]}, ${templateColors[1]})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>
-              Sustainability
-            </Typography>
-          </Box>
-          <Box>
-            <Typography sx={{ ...pageTitle, fontWeight: 600 }}>Modules</Typography>
-          </Box>
-        </Box>
-        <Box sx={{ paddingY: 0.5 }} />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography sx={{ ...pageParagraph, textAlign: "center", maxWidth: 800, color: "gray" }}>
-            Industry-specific solutions tailored to the unique challenges and opportunities within your sector. Choose
-            your focus area to get started.
-          </Typography>
-        </Box>
+        <Heading_v3_green
+          title={["Sectoral", "Sustainability", "Modules"]}
+          subtitle="Industry-specific solutions tailored to the unique challenges and opportunities within your sector. Choose
+            your focus area to get started."
+        />
         <Box sx={{ paddingY: 6 }} />
       </Box>
-      <Box sx={{ paddingX: 6, paddingY: 12 }}>
-        <Grid container columnSpacing={3}>
-          {cards.map((c, i) => (
-            <Grid key={i} size={6}>
-              <Card_v3 item={c} />
-            </Grid>
-          ))}
+      <Box sx={{ paddingX: 4, paddingY: 6, backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})` }}>
+        <Grid container spacing={3}>
+          <Grid size={{ sm: 12, md: 6 }}>
+            <Card_v3_green item={cards[0]} />
+          </Grid>
+          <Grid size={{ sm: 12, md: 6 }}>
+            <Card_v3_blue item={cards[1]} />
+          </Grid>
         </Grid>
       </Box>
-      <Box>
+      <Box sx={{ backgroundImage: `linear-gradient(180deg, white, ${backgroundColors[0]})`, paddingX: 2 }}>
+        <Heading_v1_black
+          title="Why Choose Sectoral Solutions?"
+          subtitle="Every industry has unique sustainability challenges. Our sectoral approach ensures you get solutions
+              designed specifically for your industry's needs."
+        />
         <Box sx={{ paddingY: 4 }} />
-        <Box>
-          <Typography sx={{ ...title_1, fontWeight: 600, textAlign: "center" }}>
-            Why Choose Sectoral Solutions?
-          </Typography>
-        </Box>
-        <Box sx={{ paddingY: 1 }} />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Box sx={{ maxWidth: 800 }}>
-            <Typography sx={{ ...paragraph_1, color: "gray", textAlign: "center" }}>
-              Every industry has unique sustainability challenges. Our sectoral approach ensures you get solutions
-              designed specifically for your industry's needs.
-            </Typography>
-          </Box>
-        </Box>
-        <Box sx={{ paddingY: 3 }} />
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
           {cards_2.map((c, i) => (
             <Box key={i}>
               <Card_v4 item={c} index={i} />
@@ -108,41 +80,16 @@ const sectoral_modules = () => {
         </Box>
         <Box sx={{ paddingY: 4 }} />
       </Box>
-      <Box sx={{ backgroundImage: `linear-gradient(90deg, ${templateColors[0]}, ${templateColors[1]})` }}>
-        <Box sx={{ paddingY: 4 }} />
-        <Box>
-          <Typography sx={{ ...title_1, fontWeight: 600, textAlign: "center", color: "white" }}>
-            Ready to Transform Your Industry?
-          </Typography>
-        </Box>
+      <Box sx={{ backgroundImage: `linear-gradient(90deg, ${templateColors[0]}, ${templateColors[1]})`, paddingX: 2 }}>
+        <Heading_v1_white
+          title="Ready to Transform Your Industry?"
+          subtitle="Choose your sector and start implementing sustainability solutions designed specifically for your industry"
+        />
         <Box sx={{ paddingY: 1 }} />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Box sx={{ maxWidth: 600 }}>
-            <Typography sx={{ ...paragraph_1, color: "white", textAlign: "center" }}>
-              Choose your sector and start implementing sustainability solutions designed specifically for your industry
-            </Typography>
+          <Box>
+            <Button_v1 text="Contact Our Sector Experts" />
           </Box>
-        </Box>
-        <Box sx={{ paddingY: 1 }} />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Button sx={{ textTransform: "none", color: "black", backgroundColor: backgroundColors[0], borderRadius: 2 }}>
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                justifyContent: "center",
-                alignItems: "center",
-                paddingY: 0.5,
-                paddingX: 2,
-              }}>
-              <Box>
-                <Typography sx={{ ...paragraph_3 }}>Contact Our Sector Experts</Typography>
-              </Box>
-              <Box>
-                <FiArrowRight />
-              </Box>
-            </Box>
-          </Button>
         </Box>
         <Box sx={{ paddingY: 4 }} />
       </Box>
