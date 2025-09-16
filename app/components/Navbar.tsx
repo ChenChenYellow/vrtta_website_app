@@ -133,7 +133,14 @@ const Navbar = () => {
                   FR
                 </Button>
               ) : (
-                <Button onClick={() => setLanguage("English")}>EN</Button>
+                <Button
+                  onClick={() => setLanguage("English")}
+                  sx={{
+                    color: color.primary,
+                    "&:hover": { backgroundColor: hexToRgba(color.secondary, 0.2) },
+                  }}>
+                  EN
+                </Button>
               )}
             </Box>
           )}
